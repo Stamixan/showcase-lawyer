@@ -32,12 +32,12 @@
 		<div class="mx-auto h-1 w-24 bg-primary"></div>
 	</div>
 	<!-- Showing only first 3 services as a teaser -->
-	<Services services={firmData.services.slice(0, 3)} />
+	<Services services={firmData.services.slice(0, 3)} mode="dark" />
 
 	<div class="mt-12 text-center">
 		<a
 			href="/{data.lang}/services"
-			class="inline-block rounded border border-primary px-8 py-3 text-lg text-primary transition-colors hover:bg-primary hover:text-white"
+			class="inline-block rounded border border-white/20 px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-white hover:text-slate-900"
 		>
 			{data.lang === 'el' ? 'Δείτε όλες τις υπηρεσίες' : 'View All Services'}
 		</a>
