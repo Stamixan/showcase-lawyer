@@ -64,7 +64,11 @@
 
 <main class="grid w-full grid-cols-1 overflow-x-hidden">
 	{#key page.url.pathname}
-		<div class="col-start-1 row-start-1 w-full">
+		<div
+			class="col-start-1 row-start-1 w-full"
+			in:blur={{ amount: 8, duration: 600, delay: 100, easing: cubicOut }}
+			out:fade={{ duration: 200, easing: cubicOut }}
+		>
 			{@render children()}
 		</div>
 	{/key}

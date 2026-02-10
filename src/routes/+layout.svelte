@@ -66,11 +66,13 @@
 	<!-- Dynamic Font Loading -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-	<link
-		href="https://fonts.googleapis.com/css2?family={theme.fonts.heading}&family={theme.fonts
-			.body}&display=swap"
-		rel="stylesheet"
-	/>
+	{#if theme.fonts.heading !== 'Outfit:wght@400;700' || theme.fonts.body !== 'DM+Sans:wght@400;500'}
+		<link
+			href="https://fonts.googleapis.com/css2?family={theme.fonts.heading}&family={theme.fonts
+				.body}&display=swap"
+			rel="stylesheet"
+		/>
+	{/if}
 </svelte:head>
 
 <div style={cssVariables} class="contents">

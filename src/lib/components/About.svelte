@@ -56,7 +56,7 @@
 								clip-rule="evenodd"
 							></path>
 						</svg>
-						<span class="text-content-s">{ui.memberBar}</span>
+						<span class="font-medium text-slate-700">{ui.memberBar}</span>
 					</div>
 					<div class="flex items-start">
 						<svg
@@ -70,7 +70,7 @@
 								clip-rule="evenodd"
 							></path>
 						</svg>
-						<span class="text-content-s">{ui.appealCourt}</span>
+						<span class="font-medium text-slate-700">{ui.appealCourt}</span>
 					</div>
 					<div class="flex items-start">
 						<svg
@@ -84,7 +84,7 @@
 								clip-rule="evenodd"
 							></path>
 						</svg>
-						<span class="text-content-s">{ui.fluentEnglish}</span>
+						<span class="font-medium text-slate-700">{ui.fluentEnglish}</span>
 					</div>
 					<div class="flex items-start">
 						<svg
@@ -98,7 +98,7 @@
 								clip-rule="evenodd"
 							></path>
 						</svg>
-						<span class="text-content-s">{ui.modernApproach}</span>
+						<span class="font-medium text-slate-700">{ui.modernApproach}</span>
 					</div>
 				</div>
 			</div>

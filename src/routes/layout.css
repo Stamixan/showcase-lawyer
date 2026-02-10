@@ -35,10 +35,10 @@
 
 	/* Text */
 	--text-main: var(--color-slate-900);
-	--text-muted: var(--color-slate-600);
-	--text-light: var(--color-slate-400);
+	--text-muted: var(--color-slate-700); /* Was slate-600 */
+	--text-light: var(--color-slate-600); /* Was slate-400 */
 	--text-inverted: var(--color-white);
-	--text-inverted-muted: var(--color-slate-300);
+	--text-inverted-muted: var(--color-slate-200); /* Was slate-300 */
 
 	/* Borders */
 	--border-light: var(--color-slate-200);
@@ -108,6 +108,12 @@ html[lang='en'] .font-serif.font-bold {
 	background-size: cover;
 	animation: slow-zoom 10s ease-in-out infinite alternate;
 	will-change: transform;
+}
+
+@media (max-width: 768px) {
+	.hero-bg {
+		background-image: url('/justice-mobile.webp');
+	}
 }
 
 @media (min-width: 768px) {

@@ -19,19 +19,19 @@
 		<div class="grid grid-cols-2 gap-8 text-center md:grid-cols-4">
 			<div use:reveal={{ delay: 0 }}>
 				<div class="font-serif text-4xl font-bold text-primary">{yearsExperience}</div>
-				<div class="mt-2 text-white/60">{labels.years}</div>
+				<div class="mt-2 text-white/80">{labels.years}</div>
 			</div>
 			<div use:reveal={{ delay: 100 }}>
 				<div class="font-serif text-4xl font-bold text-primary">{casesWon}</div>
-				<div class="mt-2 text-white/60">{labels.cases}</div>
+				<div class="mt-2 text-white/80">{labels.cases}</div>
 			</div>
 			<div use:reveal={{ delay: 200 }}>
 				<div class="font-serif text-4xl font-bold text-primary">{successRate}</div>
-				<div class="mt-2 text-white/60">{labels.rate}</div>
+				<div class="mt-2 text-white/80">{labels.rate}</div>
 			</div>
 			<div use:reveal={{ delay: 300 }}>
 				<div class="font-serif text-4xl font-bold text-primary">{happyClients}</div>
-				<div class="mt-2 text-white/60">{labels.clients}</div>
+				<div class="mt-2 text-white/80">{labels.clients}</div>
 			</div>
 		</div>
 	</div>
