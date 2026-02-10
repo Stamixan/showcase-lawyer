@@ -149,6 +149,12 @@ html[lang='en'] .font-serif.font-bold {
 	}
 }
 
+/* Optimization: Defer rendering of off-screen content */
+section:not(#home) {
+	content-visibility: auto;
+	contain-intrinsic-size: 1000px; /* Approximate height to prevent scrollbar jumping */
+}
+
 @media print {
 	/* 1. Page Margin Setup */
 	@page {

@@ -67,7 +67,7 @@
 							class="transition-colors hover:text-primary {$page.url.pathname === link.href ||
 							($page.url.pathname === '/' && link.href === '/el')
 								? 'font-medium text-primary'
-								: 'text-white/80'}"
+								: 'text-white/90'}"
 						>
 							{link.label}
 						</a>
@@ -111,7 +111,7 @@
 							? 'font-medium text-primary'
 							: $page.url.pathname === link.href
 								? 'font-medium text-primary'
-								: 'text-white/80 hover:text-primary'}"
+								: 'text-white/90 hover:text-primary'}"
 						onclick={() => (isMobileMenuOpen = false)}
 					>
 						{link.label}
