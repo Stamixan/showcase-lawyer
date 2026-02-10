@@ -99,21 +99,13 @@ html[lang='en'] .font-serif.font-bold {
 		transform: scale(1);
 	}
 	to {
-		transform: scale(1.15); /* Subtle zoom in */
+		transform: scale(1.1); /* Slightly reduced for better performance */
 	}
 }
 
-.hero-bg {
-	background: url('/justice.webp') no-repeat center center;
-	background-size: cover;
-	animation: slow-zoom 10s ease-in-out infinite alternate;
+.hero-img {
+	animation: slow-zoom 20s ease-in-out infinite alternate;
 	will-change: transform;
-}
-
-@media (max-width: 768px) {
-	.hero-bg {
-		background-image: url('/justice-mobile.webp');
-	}
 }
 
 @media (min-width: 768px) {

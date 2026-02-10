@@ -5,10 +5,18 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#2563eb" />
+
+		<!-- Resource Hints -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+
+		<!-- LCP Image Preload -->
 		<link
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=DM+Sans:wght@400;500&display=swap"
-			rel="stylesheet"
+			rel="preload"
+			as="image"
+			href="/justice-mobile.webp"
+			fetchpriority="high"
+			media="(max-width: 768px)"
 		/>
 		<link
 			rel="preload"
@@ -17,12 +25,10 @@
 			fetchpriority="high"
 			media="(min-width: 769px)"
 		/>
+
 		<link
-			rel="preload"
-			as="image"
-			href="/justice-mobile.webp"
-			fetchpriority="high"
-			media="(max-width: 768px)"
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=DM+Sans:wght@400;500&display=swap"
+			rel="stylesheet"
 		/>
 		%sveltekit.head%
 	</head>

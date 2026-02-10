@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { reveal } from '$lib/actions/reveal';
 	let {
 		firstName = '',
 		lastName = '',
@@ -14,15 +13,25 @@
 </script>
 
 <section id="home" class="relative flex min-h-screen items-center overflow-hidden">
-	<!-- Cinematic Background Layer (Using CSS for smoother initial render) -->
-	<div class="hero-bg absolute inset-0 -z-10"></div>
+	<!-- Cinematic Background Layer (Using picture for better LCP and performance) -->
+	<picture class="absolute inset-0 -z-10 h-full w-full">
+		<source media="(max-width: 768px)" srcset="/justice-mobile.webp" />
+		<img
+			src="/justice.webp"
+			alt="Justice Background"
+			class="hero-img h-full w-full object-cover"
+			fetchpriority="high"
+			loading="eager"
+			decoding="async"
+		/>
+	</picture>
 
 	<!-- Overlay Gradient (Static) -->
 	<div
 		class="absolute inset-0 -z-10 bg-linear-to-br from-slate-900/95 via-slate-900/80 to-slate-900/70"
 	></div>
 	<div class="mx-auto max-w-7xl px-4 py-32 sm:px-6 lg:px-8">
-		<div class="max-w-3xl" use:reveal={{ delay: 100 }}>
+		<div class="max-w-3xl">
 			<div class="mb-6 flex items-center">
 				<div class="mr-4 h-0.5 w-16 bg-primary"></div>
 				<span class="text-sm font-medium tracking-wider text-primary uppercase">{title}</span>
