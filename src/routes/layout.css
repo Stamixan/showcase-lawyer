@@ -93,20 +93,10 @@ html[lang='en'] .font-serif.font-bold {
 }
 
 .hero-bg {
-	background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80')
-		no-repeat center center;
+	background: url('/justice.webp') no-repeat center center;
 	background-size: cover;
 	animation: slow-zoom 10s ease-in-out infinite alternate;
 	will-change: transform;
-}
-
-/* Optimizations for Mobile (Portrait Crop) */
-@media (max-width: 768px) {
-	.hero-bg {
-		background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&h=1000&q=80')
-			no-repeat center top;
-		background-size: cover;
-	}
 }
 
 @keyframes slow-zoom {
