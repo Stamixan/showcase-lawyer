@@ -103,7 +103,9 @@ html[lang='en'] .font-serif.font-bold {
 	}
 }
 
-.animate-slow-zoom {
+.hero-bg {
+	background: url('/justice.webp') no-repeat center center;
+	background-size: cover;
 	animation: slow-zoom 10s ease-in-out infinite alternate;
 	will-change: transform;
 }

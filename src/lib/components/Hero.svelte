@@ -14,16 +14,8 @@
 </script>
 
 <section id="home" class="relative flex min-h-screen items-center overflow-hidden">
-	<!-- Cinematic Background Layer (Using <img> for LCP) -->
-	<div class="absolute inset-0 -z-10 overflow-hidden">
-		<!-- svelte-ignore element_invalid_self_closing_tag -->
-		<img
-			src="/justice.webp"
-			alt=""
-			fetchpriority="high"
-			class="animate-slow-zoom h-full w-full object-cover"
-		/>
-	</div>
+	<!-- Cinematic Background Layer (Using CSS for smoother initial render) -->
+	<div class="hero-bg absolute inset-0 -z-10"></div>
 
 	<!-- Overlay Gradient (Static) -->
 	<div
