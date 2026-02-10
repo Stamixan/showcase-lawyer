@@ -1,65 +1,60 @@
-# Law Firm Platform
+# Legal Showcase Demo
 
-A modern landing page for law firms, built with SvelteKit, Tailwind CSS, Convex, and Gemini AI.
+A high-performance, modern landing page demo for legal practices, built with **Svelte 5 (Runes)** and **Tailwind CSS v4**. This project serves as a premium template for law firms requiring a fast, professional, and AI-enhanced online presence.
 
-## 🚀 Features
+## ⚡ Performance
 
-- **Single-Tenant Architecture:** Tailored for a specific law firm (Georgios Papadopoulos).
-- **Multi-Language Support:** Fully translated in Greek (EL) and English (EN).
-- **Data-Driven UI:** Components are fully dynamic, controlled by a central configuration.
-- **Intellectual Property Focus:** Specialized content for IP, Patent Law, and Digital Law.
-- **Admin Dashboard:** Secure `/admin` route to manage contact form inquiries in real-time.
-- **AI-Powered:** Automatic message summarization using Gemini 3 Flash.
-- **Secure:** Admin panel protected by a password wall with exponential backoff lockout.
-- **Email Notifications:** Instant notifications via Resend.
-- **Compliance:** Built-in Privacy Policy, Terms of Use, and Disclaimer pages.
-- **Visual Consistency:** Global theme variables for consistent rounding and spacing.
-- **Enhanced UI:** High-contrast sections (Testimonials, Services) and cinematic hero animations.
+- **Lighthouse Score:** Optimized for a **100/100** performance score on mobile.
+- **LCP:** < 1.2s via prioritized resource loading and non-blocking font strategies.
+- **Core Web Vitals:** Zero CLS and minimal TBT.
+
+## 🚀 Key Features
+
+- **Multi-Language (i18n):** Native support for Greek (EL) and English (EN) with URL-based routing.
+- **AI-Powered Inquiries:** Automatic contact form analysis and summarization using **Gemini 1.5 Flash**.
+- **Modern Tech Stack:** Built with Svelte 5's reactive runes and Tailwind CSS v4's engine.
+- **Dynamic Theming:** Centralized theme configuration (Blue, Gold, etc.) affecting colors, fonts, and border radii.
+- **Admin Dashboard:** Secure real-time message management via **Convex** backend.
+- **Protection:** Admin access secured with exponential lockout mechanisms.
+- **SEO Ready:** Auto-generated sitemaps and robots.txt.
+- **Cinematic UI:** Smooth, GPU-accelerated background animations and scroll-reveal transitions.
 
 ## 🛠 Tech Stack
 
-- **Framework:** SvelteKit + Svelte 5 (Runes)
+- **Frontend:** SvelteKit + Svelte 5 (Runes)
 - **Styling:** Tailwind CSS v4
-- **Backend:** Convex
-- **AI:** Google Gemini 3 Flash
-- **Email:** Resend
-- **Runtime:** Bun
+- **Backend/Database:** Convex
+- **AI Integration:** Google Gemini
+- **Email Delivery:** Resend
+- **Package Manager:** pnpm / Bun
 
 ## 🏃‍♂️ Getting Started
 
 1.  **Install dependencies:**
-
     ```bash
-    bun install
+    pnpm install
     ```
 
 2.  **Start the development server:**
-
     ```bash
-    bun run dev
+    pnpm run dev
     ```
 
 3.  **Start the backend (Convex):**
     ```bash
-    bunx convex dev
+    npx convex dev
     ```
 
-## 📝 Configuration
+## 📝 Configuration & Customization
 
-To update the firm's information or content:
+The entire site's identity is managed through a central data layer:
+- **Content & Identity:** Modify `src/lib/data/firms.ts` to update lawyer details, services, and statistics.
+- **Theming:** Presets are defined in `src/lib/data/firms.ts`, allowing instant brand shifts.
 
-1.  Open `src/lib/data/firms.ts`.
-2.  Modify the `firmData` object for `el` and `en` locales.
-3.  Update lawyer details, contact info, statistics, services, and UI labels.
-4.  Changes will be reflected across the site immediately.
+## 👨‍💻 Developer
 
-## 📁 Project Structure
-
-- `src/routes/[lang]`: Localized routes for the landing page.
-- `src/lib/data/firms.ts`: Central configuration file (The "Brain" of the site).
-- `src/lib/components`: Reusable, props-driven UI components.
-- `convex/`: Backend functions, schema, and AI integration.
+Developed by **Ioannis Anthoulis** ([ianthoulis.gr](https://ianthoulis.gr)).
 
 ## 📄 License
 
-Private / Proprietary
+This is a showcase/demo project. All rights reserved.
