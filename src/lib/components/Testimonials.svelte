@@ -28,8 +28,8 @@
 					class="relative rounded-lg border-t-4 border-primary bg-white p-8 shadow-xl transition-shadow hover:shadow-2xl"
 					use:reveal={{ delay: i * 150 }}
 				>
-					<div class="absolute top-4 left-6 font-serif text-6xl text-primary opacity-20">"</div>
-					<p class="relative z-10 mb-6 leading-relaxed text-slate-600">
+					<div class="absolute top-4 left-6 font-serif text-6xl text-primary opacity-30">"</div>
+					<p class="relative z-10 mb-6 leading-relaxed text-slate-800">
 						{testimonial.quote}
 					</p>
 					<div class="flex items-center">
@@ -40,7 +40,7 @@
 						</div>
 						<div class="ml-4">
 							<div class="font-medium text-slate-900">{testimonial.author}</div>
-							<div class="text-sm text-slate-500">{testimonial.role}</div>
+							<div class="text-sm text-slate-700">{testimonial.role}</div>
 						</div>
 					</div>
 				</div>

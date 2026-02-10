@@ -172,9 +172,9 @@
 			</div>
 		</div>
 
-		<div class="mt-12 border-t border-white/5 pt-8 text-center text-sm text-white/50">
+		<div class="mt-12 border-t border-white/10 pt-8 text-center text-sm text-white/80">
 			<p>&copy; {new Date().getFullYear()} {firstName} {lastName}. {t.rights}</p>
-			<p class="mt-2 text-xs opacity-70">
+			<p class="mt-2 text-xs text-white/70">
 				{t.created_by}
 				<a
 					href="https://ianthoulis.gr"
