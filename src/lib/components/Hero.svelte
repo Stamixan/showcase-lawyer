@@ -19,6 +19,8 @@
 		<img
 			src="/justice.webp"
 			alt="Justice Background"
+			width="1920"
+			height="1080"
 			class="hero-img h-full w-full object-cover"
 			fetchpriority="high"
 			loading="eager"

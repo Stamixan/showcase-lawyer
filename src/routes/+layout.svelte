@@ -68,9 +68,17 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	{#if theme.fonts.heading !== 'Outfit:wght@400;700' || theme.fonts.body !== 'DM+Sans:wght@400;500'}
 		<link
+			rel="preload"
+			as="style"
+			href="https://fonts.googleapis.com/css2?family={theme.fonts.heading}&family={theme.fonts
+				.body}&display=swap"
+		/>
+		<link
 			href="https://fonts.googleapis.com/css2?family={theme.fonts.heading}&family={theme.fonts
 				.body}&display=swap"
 			rel="stylesheet"
+			media="print"
+			onload="this.media='all'"
 		/>
 	{/if}
 </svelte:head>
