@@ -1,0 +1,306 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+:root {
+	/* 1. Base Palette - Defining the raw colors */
+	--color-slate-50: #f8fafc;
+	--color-slate-100: #f1f5f9;
+	--color-slate-200: #e2e8f0;
+	--color-slate-300: #cbd5e1;
+	--color-slate-400: #94a3b8;
+	--color-slate-500: #64748b;
+	--color-slate-600: #475569;
+	--color-slate-700: #334155;
+	--color-slate-800: #1e293b;
+	--color-slate-900: #0f172a;
+	--color-white: #ffffff;
+	--color-black: #000000;
+	--color-red-500: #ef4444;
+	--color-red-600: #dc2626;
+
+	/* 2. Brand Colors */
+	/* Re-using existing CSS var names if they are set elsewhere, otherwise defining defaults */
+	/* Assuming --color-primary is set in app.html or another global file, but safe to redefine/fallback here if needed. 
+	   For now, we map new semantic vars to what we expect exist or use specific values. 
+	   If --color-primary is dynamic, we keep using it. */
+
+	/* 3. Semantic Mappings - The "Source of Truth" for components */
+
+	/* Backgrounds */
+	--bg-main: var(--color-slate-50);
+	--bg-card: var(--color-white);
+	--bg-dark: var(--color-slate-900);
+	--bg-dark-lighter: var(--color-slate-700);
+	--bg-input: var(--color-white);
+
+	/* Text */
+	--text-main: var(--color-slate-900);
+	--text-muted: var(--color-slate-600);
+	--text-light: var(--color-slate-400);
+	--text-inverted: var(--color-white);
+	--text-inverted-muted: var(--color-slate-300);
+
+	/* Borders */
+	--border-light: var(--color-slate-200);
+	--border-dark: var(--color-slate-700);
+
+	/* Feedback */
+	--color-error: var(--color-red-600);
+}
+
+@theme {
+	--font-serif: var(--font-heading);
+	--font-sans: var(--font-body);
+
+	/* Semantic Colors - Exposed to Tailwind */
+	--color-primary: var(--color-primary); /* Kept as is, presumably dynamic */
+	--color-secondary: var(--color-secondary);
+	--color-accent: var(--color-accent);
+	--color-background: var(--color-background);
+	--color-text: var(--color-text);
+	--color-heading: var(--color-heading);
+
+	/* Surfaces */
+	--color-surface-base: var(--bg-main);
+	--color-surface-dark: var(--bg-dark);
+	--color-surface-card: var(--bg-card);
+
+	/* Content */
+	--color-content-p: var(--text-main);
+	--color-content-s: var(--text-muted);
+	--color-content-inv-p: var(--text-inverted);
+	--color-content-inv-s: var(--text-inverted-muted);
+
+	/* Borders */
+	--color-border-subtle: var(--border-light);
+
+	/* Shape */
+	--radius-lg: var(--radius);
+	--radius-md: calc(var(--radius) * 0.75);
+	--radius-sm: calc(var(--radius) * 0.5);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* Cormorant Garamond is optically thinner in Latin. We bump the weight for English. */
+html[lang='en'] .font-serif {
+	text-shadow: 0 0 0.5px rgba(0, 0, 0, 0.1); /* Subtle faux-bold */
+}
+html[lang='en'] .font-serif.font-bold {
+	font-weight: 700; /* Ensure bold is bold */
+}
+
+.hero-bg {
+	background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1920&q=80')
+		no-repeat center center;
+	background-size: cover;
+	animation: slow-zoom 10s ease-in-out infinite alternate;
+	will-change: transform;
+}
+
+/* Optimizations for Mobile (Portrait Crop) */
+@media (max-width: 768px) {
+	.hero-bg {
+		background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=600&h=1000&q=80')
+			no-repeat center top;
+		background-size: cover;
+	}
+}
+
+@keyframes slow-zoom {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.15); /* Subtle zoom in */
+	}
+}
+
+@media (min-width: 768px) {
+	/* Desktop overrides if needed */
+}
+
+.gold-gradient {
+	background: linear-gradient(135deg, #b8860b 0%, #daa520 50%, #b8860b 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+}
+
+/* Scroll Reveal Animations */
+.reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition-property: opacity, transform;
+	will-change: opacity, transform;
+	transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth ease-out-quad-ish */
+}
+
+.reveal.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal {
+		transition: none !important;
+		opacity: 1 !important;
+		transform: none !important;
+	}
+}
+
+@media print {
+	/* 1. Page Margin Setup */
+	@page {
+		margin: 1cm;
+		size: auto;
+	}
+
+	/* 2. Hide Everything Non-Essential */
+	nav,
+	footer,
+	.cookie-banner,
+	.no-print,
+	button:not(.show-print),
+	[aria-label='Copy address'],
+	a[href^='/']:not([href^='http']) {
+		display: none !important;
+	}
+
+	/* 3. Reset Document Flow & Height (Crucial for "Empty Page" fix) */
+	html,
+	body,
+	main {
+		background: white !important;
+		color: black !important;
+		height: auto !important;
+		min-height: 0 !important;
+		width: 100% !important;
+		margin: 0 !important;
+		padding: 0 !important;
+		overflow: visible !important;
+	}
+
+	/* 4. Kill Flexbox/Grid centering that forces full height */
+	.min-h-screen,
+	[class*='min-h-'] {
+		min-height: 0 !important;
+		height: auto !important;
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+
+	/* 5. Typography High Contrast */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	span,
+	li,
+	dt,
+	dd,
+	a,
+	label,
+	input,
+	textarea {
+		color: black !important;
+		text-shadow: none !important;
+		filter: none !important;
+	}
+
+	/* 6. Form Visibility */
+	input,
+	textarea,
+	select {
+		border: 1px solid #000 !important; /* Stronger border for print */
+		background: transparent !important;
+		color: black !important;
+		box-shadow: none !important;
+		display: block !important;
+		resize: none;
+	}
+
+	/* 7. Link Expansion */
+	a[href^='http']:after {
+		content: ' (' attr(href) ')';
+		font-size: 0.8em;
+		color: #333;
+		word-break: break-all;
+	}
+
+	/* 8. Component Specific Fixes */
+	.hero-bg,
+	[class*='bg-'] {
+		background: none !important;
+	}
+
+	/* Prevent headers being orphaned */
+	h1,
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+
+	/* 9. Layout Flattening (Fixes "Full Page Header" / Weird Breaks) */
+	.grid,
+	.flex:not(.flex-col) {
+		display: block !important;
+	}
+
+	[class*='grid-cols-'],
+	[class*='gap-'] {
+		grid-template-columns: 1fr !important;
+		gap: 1rem !important;
+	}
+
+	/* Prevent huge images from pushing content */
+	img {
+		max-width: 50% !important; /* Smaller images in print */
+		height: auto !important;
+		margin-bottom: 1rem !important;
+		page-break-inside: avoid;
+	}
+
+	/* Allow text to break naturally */
+	p {
+		orphans: 3;
+		widows: 3;
+	}
+}
+
+/* View Transitions */
+::view-transition-group(root) {
+	animation-duration: 0.2s; /* Fast */
+	animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Sharp/Snappy */
+}
+
+::view-transition-old(root) {
+	animation-name: fade-out;
+}
+
+::view-transition-new(root) {
+	animation-name: fade-in;
+}
+
+@keyframes fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
