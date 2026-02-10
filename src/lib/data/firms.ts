@@ -45,7 +45,7 @@ export const firmData: Record<string, FirmConfig> = {
             shortBio: "Εξειδικευμένες νομικές υπηρεσίες με έμφαση στο Δίκαιο Πνευματικής και Βιομηχανικής Ιδιοκτησίας. 10 χρόνια δυναμικής παρουσίας και αφοσίωσης στην προστασία των καινοτομιών και των δικαιωμάτων των πελατών μας.",
             aboutText: `<p class="mb-4">Μετά την αποφοίτησή μου από τη Νομική Σχολή και την απόκτηση Μεταπτυχιακού Διπλώματος (LL.M.) με εξειδίκευση στο Δίκαιο των Διπλωμάτων Ευρεσιτεχνίας και της Διανοητικής Ιδιοκτησίας, έχω αφιερώσει την τελευταία δεκαετία στην παροχή υψηλού επιπέδου νομικών συμβουλών στην Αθήνα.</p>
 <p>Το γραφείο μας συνδυάζει τη σύγχρονη τεχνογνωσία με την προσωπική ενασχόληση, προσφέροντας λύσεις σε θέματα εμπορικών σημάτων, ευρεσιτεχνιών, εταιρικού δικαίου και αστικών διαφορών. Πιστεύω στη στρατηγική προσέγγιση κάθε υπόθεσης, διασφαλίζοντας ότι η δημιουργικότητα και η επιχειρηματικότητα των πελατών μου προστατεύονται πλήρως σε ένα διαρκώς μεταβαλλόμενο νομικό περιβάλλον.</p>`,
-            profileImage: "/generic_lawyer.jpg"
+            profileImage: "/generic_lawyer.webp"
         },
         contact: {
             phone: "+30 210 1234567",
@@ -184,7 +184,7 @@ export const firmData: Record<string, FirmConfig> = {
             shortBio: "Specialized legal services with a focus on Intellectual Property and Patent Law. 10 years of dynamic practice dedicated to protecting innovation and client rights.",
             aboutText: `<p class="mb-4">After graduating from Law School and obtaining my Master of Laws (LL.M.) specialized in Patent Law and Intellectual Property, I have dedicated the past decade to providing high-level legal counsel in Athens.</p>
 <p>Our firm combines modern expertise with a personal touch, offering solutions in trademarks, patents, corporate law, and civil litigation. I believe in a strategic approach to every case, ensuring that my clients' creativity and entrepreneurship are fully protected in an ever-evolving legal landscape.</p>`,
-            profileImage: "/generic_lawyer.jpg"
+            profileImage: "/generic_lawyer.webp"
         },
         contact: {
             phone: "+30 210 1234567",

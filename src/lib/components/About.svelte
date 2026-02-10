@@ -28,6 +28,9 @@
 				<img
 					src={profileImage}
 					alt="{firstName} {lastName}"
+					width="600"
+					height="750"
+					loading="lazy"
 					class="relative mx-auto w-full max-w-md rounded-lg shadow-2xl"
 				/>
 			</div>
