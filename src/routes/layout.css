@@ -92,12 +92,7 @@ html[lang='en'] .font-serif.font-bold {
 	font-weight: 700; /* Ensure bold is bold */
 }
 
-.hero-bg {
-	background: url('/justice.webp') no-repeat center center;
-	background-size: cover;
-	animation: slow-zoom 10s ease-in-out infinite alternate;
-	will-change: transform;
-}
+/* Optimizations for Reduced Motion Preference */
 
 @keyframes slow-zoom {
 	from {
@@ -106,6 +101,11 @@ html[lang='en'] .font-serif.font-bold {
 	to {
 		transform: scale(1.15); /* Subtle zoom in */
 	}
+}
+
+.animate-slow-zoom {
+	animation: slow-zoom 10s ease-in-out infinite alternate;
+	will-change: transform;
 }
 
 @media (min-width: 768px) {
