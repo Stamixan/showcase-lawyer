@@ -10,6 +10,11 @@
 	// Initialize with server-provided default, then hydrate from LS
 	let theme = $state(data.theme);
 
+	// Update theme if server data changes (e.g. navigation)
+	$effect(() => {
+		theme = data.theme;
+	});
+
 	onMount(() => {
 		const stored = localStorage.getItem('theme-preset');
 		if (stored && themePresets[stored]) {
@@ -78,7 +83,7 @@
 				.body}&display=swap"
 			rel="stylesheet"
 			media="print"
-			onload="this.media='all'"
+			onload={(e) => (e.currentTarget.media = 'all')}
 		/>
 	{/if}
 </svelte:head>
