@@ -94,18 +94,17 @@ html[lang='en'] .font-serif.font-bold {
 
 /* Optimizations for Reduced Motion Preference */
 
-@keyframes slow-zoom {
-	from {
-		transform: scale(1);
-	}
-	to {
-		transform: scale(1.1); /* Slightly reduced for better performance */
-	}
+.hero-img {
+	animation: slow-zoom 30s ease-in-out infinite alternate;
 }
 
-.hero-img {
-	animation: slow-zoom 20s ease-in-out infinite alternate;
-	will-change: transform;
+@keyframes slow-zoom {
+	from {
+		transform: scale(1.02);
+	}
+	to {
+		transform: scale(1.1);
+	}
 }
 
 @media (min-width: 768px) {

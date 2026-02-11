@@ -32,7 +32,7 @@
 	]);
 </script>
 
-<nav class="fixed z-50 w-full border-b border-primary/20 bg-secondary/95 backdrop-blur-sm">
+<nav class="fixed z-50 w-full border-b border-primary/20 bg-secondary/95 backdrop-blur-none md:backdrop-blur-sm">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 		<div class="flex h-20 items-center justify-between">
 			<div class="flex items-center">

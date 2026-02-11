@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#2563eb" />
+		<meta name="theme-color" content="#0f172a" />
 
 		<!-- LCP Image Preload -->
 		<link
@@ -25,23 +25,13 @@
 		<!-- High Performance Font Loading Strategy -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-		<link
-			rel="preload"
-			as="style"
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=DM+Sans:wght@400;500&display=swap"
-		/>
+		
+		<!-- Critical Fonts: Load directly to prevent FOUT/CLS in Hero -->
 		<link
 			href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=DM+Sans:wght@400;500&display=swap"
 			rel="stylesheet"
-			media="print"
-			onload="this.media='all'"
 		/>
-		<noscript>
-			<link
-				href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=DM+Sans:wght@400;500&display=swap"
-				rel="stylesheet"
-			/>
-		</noscript>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover" class="bg-slate-50 font-sans text-slate-800">

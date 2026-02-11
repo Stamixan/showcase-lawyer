@@ -69,8 +69,6 @@
 <svelte:head>
 	<link rel="icon" href={faviconDataUri} />
 	<!-- Dynamic Font Loading -->
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	{#if theme.fonts.heading !== 'Outfit:wght@400;700' || theme.fonts.body !== 'DM+Sans:wght@400;500'}
 		<link
 			rel="preload"
