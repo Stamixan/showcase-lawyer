@@ -41,7 +41,7 @@ The project is a high-performance, single-tenant landing page for a specialized 
   - Protected route at `/admin`.
   - Inquiry management with AI-powered summarization.
 
-### Completed Improvements (Feb 5, 2025 - Feb 5, 2026)
+### Completed Improvements (Feb 5, 2025 - Feb 11, 2026)
 
 - [x] **Profile Update:** Transitioned from 30+ years generalist to 10-year IP specialist.
 - [x] **i18n Refactor:** Removed all hardcoded Greek/English strings from components.
@@ -52,10 +52,20 @@ The project is a high-performance, single-tenant landing page for a specialized 
 - [x] **Visual Consistency:** Implemented a global border radius system in `layout.css` and standardized all components (Contact, Hero, Testimonials, Services) to use semantic rounding classes (`rounded-lg`, `rounded-md`, `rounded-sm`) derived from a single theme variable.
 - [x] **Contrast Improvements:** Updated Testimonials and Services sections to use "white cards on dark backgrounds" for better readability and visual hierarchy, resolving "blue-on-blue" contrast issues.
 - [x] **Seamless Layouts:** Merged the Services header and content sections into a single container to remove visual boundaries and improve flow.
+- [x] **Performance Optimization (98% Mobile):**
+    - [x] Implemented "Golden Standard" font loading (Preload + Async CSS) to eliminate CLS and render-blocking penalties.
+    - [x] Optimized LCP via high-priority preloads and breakpoint-matched picture elements.
+    - [x] Reduced Main-thread work by refactoring Markdown hydration and disabling expensive GPU effects (backdrop-blur, hero zoom) on mobile.
+    - [x] Aligned metadata (`theme-color`) and removed redundant network requests (static favicon) for a faster "Time to First Byte" experience.
 
 ## 3. Suggestions for Improvement (Roadmap)
 
-### A. Form Handling & Robustness
+### A. Performance (The Last 2%)
+
+- **Image Compression:** Further compress `justice.webp` and `justice-mobile.webp` or use AVIF if supported.
+- **Resource Hints:** Implement `preconnect` for Convex API endpoints to speed up initial data fetch.
+
+### B. Form Handling & Robustness
 
 - **Superforms Integration:** Replace manual handling with `sveltekit-superforms` for better validation.
 
