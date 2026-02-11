@@ -3,15 +3,11 @@
 
 	let { content, html = undefined, class: className = '' } = $props();
 
-	let htmlContent = $state('');
-	let isLoading = $state(true);
+	let htmlContent = $state(html || '');
+	let isLoading = $state(!html);
 
 	onMount(async () => {
-		if (html) {
-			htmlContent = html;
-			isLoading = false;
-			return;
-		}
+		if (htmlContent) return;
 
 		try {
 			const [markedModule, dompurifyModule] = await Promise.all([
