@@ -9,13 +9,11 @@
 <div class="bg-slate-900 pt-24 pb-12">
 	<div class="mx-auto max-w-7xl px-4 text-center text-white sm:px-6 lg:px-8">
 		<h1 class="mb-6 font-serif text-4xl font-bold md:text-5xl">
-			{data.lang === 'el' ? 'Επικοινωνία' : 'Contact Me'}
+			{data.t.contact.title}
 		</h1>
 		<div class="mx-auto mb-8 h-1 w-24 bg-primary"></div>
 		<p class="mx-auto max-w-2xl text-lg text-slate-300">
-			{data.lang === 'el'
-				? 'Είμαστε εδώ για να σας βοηθήσουμε. Καλέστε μας ή στείλτε μήνυμα.'
-				: 'We are here to help. Call us or send a message.'}
+			{data.t.contact.description}
 		</p>
 	</div>
 </div>
@@ -31,4 +29,4 @@
 	lang={data.lang}
 />
 
-<CookieBanner lang={data.lang} />
+<CookieBanner labels={data.t.cookies} />

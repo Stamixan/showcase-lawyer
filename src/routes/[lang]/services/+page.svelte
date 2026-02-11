@@ -8,13 +8,11 @@
 <div class="min-h-screen bg-slate-900 py-24">
 	<div class="mx-auto mb-16 max-w-7xl px-4 text-center text-white sm:px-6 lg:px-8">
 		<h1 class="mb-6 font-serif text-4xl font-bold md:text-5xl">
-			{data.lang === 'el' ? 'Τομείς Δικαίου' : 'My Services'}
+			{data.t.services.title}
 		</h1>
 		<div class="mx-auto mb-8 h-1 w-24 bg-primary"></div>
 		<p class="mx-auto max-w-2xl text-lg text-slate-300">
-			{data.lang === 'el'
-				? 'Εξειδικευμένες νομικές υπηρεσίες προσαρμοσμένες στις ανάγκες σας.'
-				: 'Specialized legal services tailored to your needs.'}
+			{data.t.services.description}
 		</p>
 	</div>
 

@@ -3,43 +3,9 @@
 		firstName = '',
 		lastName = '',
 		lang = 'el',
-		socials = { facebook: '', instagram: '', linkedin: '' }
+		socials = { facebook: '', instagram: '', linkedin: '' },
+		t
 	} = $props();
-
-	const labels = {
-		el: {
-			links: 'Σύνδεσμοι',
-			home: 'Αρχική',
-			about: 'Σχετικά',
-			services: 'Τομείς Δικαίου',
-			testimonials: 'Μαρτυρίες',
-			contact: 'Επικοινωνία',
-			legal: 'Νομικά',
-			privacy: 'Πολιτική Απορρήτου',
-			terms: 'Όροι Χρήσης',
-			disclaimer: 'Αποποίηση Ευθύνης',
-			rights: 'Με επιφύλαξη παντός δικαιώματος.',
-			created_by: 'Δημιουργία:',
-			developer_name: 'Ιωάννης Ανθούλης'
-		},
-		en: {
-			links: 'Quick Links',
-			home: 'Home',
-			about: 'About',
-			services: 'Practice Areas',
-			testimonials: 'Testimonials',
-			contact: 'Contact',
-			legal: 'Legal',
-			privacy: 'Privacy Policy',
-			terms: 'Terms of Use',
-			disclaimer: 'Disclaimer',
-			rights: 'All rights reserved.',
-			created_by: 'Created by',
-			developer_name: 'Ioannis Anthoulis'
-		}
-	};
-
-	const t = $derived(labels[lang as 'el' | 'en'] || labels.el);
 </script>
 
 <footer class="border-t border-white/5 bg-secondary py-12 text-white/90">
@@ -50,14 +16,12 @@
 					{firstName.charAt(0)}. {lastName}
 				</a>
 				<p class="mb-6 max-w-sm text-white/80">
-					{lang === 'el'
-						? 'Παρέχοντας υψηλής ποιότητας νομικές υπηρεσίες με ακεραιότητα και επαγγελματισμό.'
-						: 'Providing high-quality legal services with integrity and professionalism.'}
+					{t.footer.tagline}
 				</p>
 				{#if socials.facebook || socials.instagram || socials.linkedin}
 					<div>
 						<h4 class="mb-4 text-sm font-semibold tracking-wider text-white/70 uppercase">
-							{lang === 'el' ? 'Ακολουθηστε μας' : 'Follow Us'}
+							{t.footer.follow_us}
 						</h4>
 						<div class="flex space-x-4">
 							{#if socials.facebook}

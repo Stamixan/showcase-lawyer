@@ -7,7 +7,7 @@
 		initials: string;
 	}
 
-	let { testimonials = [] as Testimonial[] } = $props();
+	let { testimonials = [] as Testimonial[], labels = { title: '', subtitle: '' } } = $props();
 </script>
 
 <section id="testimonials" class="relative overflow-hidden bg-surface-dark py-24">
@@ -15,11 +15,13 @@
 		<div class="mb-16 text-center" use:reveal={{ delay: 0 }}>
 			<div class="mb-4 flex items-center justify-center">
 				<div class="mr-4 h-0.5 w-12 bg-primary"></div>
-				<span class="text-sm font-medium tracking-wider text-primary uppercase">Μαρτυρίες</span>
+				<span class="text-sm font-medium tracking-wider text-primary uppercase"
+					>{labels.subtitle}</span
+				>
 				<div class="ml-4 h-0.5 w-12 bg-primary"></div>
 			</div>
 			<h2 class="mb-4 font-serif text-4xl font-bold text-content-inv-p md:text-5xl">
-				Τι λένε οι πελάτες μας
+				{labels.title}
 			</h2>
 		</div>
 		<div class="grid gap-8 md:grid-cols-3">

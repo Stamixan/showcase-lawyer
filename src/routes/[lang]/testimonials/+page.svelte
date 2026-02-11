@@ -5,4 +5,4 @@
 	let firmData = $derived(data.firmData);
 </script>
 
-<Testimonials testimonials={firmData.testimonials} />
+<Testimonials testimonials={firmData.testimonials} labels={data.t.testimonials} />

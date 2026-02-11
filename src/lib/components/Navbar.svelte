@@ -3,7 +3,7 @@
 	import FlagUK from '$lib/components/icons/FlagUK.svelte';
 	import FlagGR from '$lib/components/icons/FlagGR.svelte';
 
-	let { firstName = '', lastName = '', lang = 'el' } = $props();
+	let { firstName = '', lastName = '', lang = 'el', t } = $props();
 
 	let isMobileMenuOpen = $state(false);
 
@@ -23,24 +23,13 @@
 		return segments.join('/');
 	}
 
-	const links = {
-		el: [
-			{ href: '/el', label: 'Αρχική' },
-			{ href: '/el/about', label: 'Σχετικά' },
-			{ href: '/el/services', label: 'Τομείς Δικαίου' },
-			{ href: '/el/testimonials', label: 'Μαρτυρίες' },
-			{ href: '/el/contact', label: 'Επικοινωνία', isCta: true }
-		],
-		en: [
-			{ href: '/en', label: 'Home' },
-			{ href: '/en/about', label: 'About' },
-			{ href: '/en/services', label: 'Practice Areas' },
-			{ href: '/en/testimonials', label: 'Testimonials' },
-			{ href: '/en/contact', label: 'Contact', isCta: true }
-		]
-	};
-
-	let navLinks = $derived(links[lang as 'el' | 'en'] || links.el);
+	let navLinks = $derived([
+		{ href: `/${lang}`, label: t.nav.home },
+		{ href: `/${lang}/about`, label: t.nav.about },
+		{ href: `/${lang}/services`, label: t.nav.services },
+		{ href: `/${lang}/testimonials`, label: t.nav.testimonials },
+		{ href: `/${lang}/contact`, label: t.nav.contact, isCta: true }
+	]);
 </script>
 
 <nav class="fixed z-50 w-full border-b border-primary/20 bg-secondary/95 backdrop-blur-sm">

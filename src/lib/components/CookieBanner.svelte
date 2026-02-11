@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
-	let { lang = 'el' } = $props();
+	let { labels = { text: '', accept: '', decline: '' } } = $props();
 
 	let showBanner = $state(false);
 
@@ -24,21 +24,6 @@
 		showBanner = false;
 		window.dispatchEvent(new CustomEvent('cookie-consent-update', { detail: 'declined' }));
 	}
-
-	const content = {
-		el: {
-			text: 'Δεν χρησιμοποιούμε cookies παρακολούθησης. Ενδέχεται να χρησιμοποιούνται cookies από τρίτες υπηρεσίες (Google Maps).',
-			accept: 'Αποδοχή',
-			decline: 'Απόρριψη'
-		},
-		en: {
-			text: 'We do not use tracking cookies. Cookies may be used by third-party services (Google Maps).',
-			accept: 'Accept',
-			decline: 'Decline'
-		}
-	};
-
-	let t = $derived(content[lang as 'el' | 'en'] || content.el);
 </script>
 
 {#if showBanner}
@@ -50,20 +35,20 @@
 			class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left"
 		>
 			<div class="text-sm text-text md:text-base">
-				{t.text}
+				{labels.text}
 			</div>
 			<div class="flex gap-4">
 				<button
 					onclick={declineCookies}
 					class="rounded-lg border border-text/20 px-4 py-2 text-sm font-medium text-text transition hover:bg-text/5"
 				>
-					{t.decline}
+					{labels.decline}
 				</button>
 				<button
 					onclick={acceptCookies}
 					class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition hover:brightness-110"
 				>
-					{t.accept}
+					{labels.accept}
 				</button>
 			</div>
 		</div>

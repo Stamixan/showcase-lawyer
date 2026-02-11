@@ -27,7 +27,7 @@
 <div class="border-t border-slate-800 bg-slate-900 py-12">
 	<div class="mb-12 text-center">
 		<h2 class="mb-4 font-serif text-3xl font-bold text-white md:text-4xl">
-			{data.lang === 'el' ? 'Τομείς Δικαίου' : 'Practice Areas'}
+			{data.t.services.title}
 		</h2>
 		<div class="mx-auto h-1 w-24 bg-primary"></div>
 	</div>
@@ -39,7 +39,7 @@
 			href="/{data.lang}/services"
 			class="inline-block rounded-md bg-primary px-8 py-3 text-lg font-medium text-white shadow-lg transition-all hover:scale-105 hover:brightness-110"
 		>
-			{data.lang === 'el' ? 'Δείτε όλες τις υπηρεσίες' : 'View All Services'}
+			{data.t.services.view_all}
 		</a>
 	</div>
 </div>

@@ -27,7 +27,7 @@
 	<meta property="og:url" content={page.url.href} />
 	<meta property="og:image" content={new URL(firmData.lawyer.profileImage, page.url.origin).href} />
 	<meta property="og:site_name" content={firmData.lawyer.fullName} />
-	<meta property="og:locale" content={lang === 'el' ? 'el_GR' : 'en_US'} />
+	<meta property="og:locale" content={data.t.meta.locale} />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
@@ -60,7 +60,12 @@
   </script>`}
 </svelte:head>
 
-<Navbar firstName={firmData.lawyer.firstName} lastName={firmData.lawyer.lastName} {lang} />
+<Navbar
+	firstName={firmData.lawyer.firstName}
+	lastName={firmData.lawyer.lastName}
+	{lang}
+	t={data.t}
+/>
 
 <main class="grid w-full grid-cols-1 overflow-x-hidden">
 	{#key page.url.pathname}
@@ -79,4 +84,5 @@
 	lastName={firmData.lawyer.lastName}
 	{lang}
 	socials={firmData.contact.socials}
+	t={data.t}
 />
