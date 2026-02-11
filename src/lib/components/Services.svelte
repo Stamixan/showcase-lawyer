@@ -6,7 +6,7 @@
 		iconPath: string;
 	}
 
-	let { services = [] as Service[], mode = 'light' } = $props();
+	let { services = [] as Service[] } = $props();
 </script>
 
 <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -14,15 +14,10 @@
 		{#each services as service, i}
 			<div
 				use:reveal={{ delay: i * 100 }}
-				class="rounded-lg border-t-4 border-primary p-8 shadow-lg transition-shadow hover:shadow-xl {mode ===
-				'dark'
-					? 'bg-slate-800 shadow-black/50'
-					: 'bg-surface-card'}"
+				class="rounded-lg border-t-4 border-primary bg-surface-card p-8 shadow-lg transition-shadow hover:shadow-xl"
 			>
 				<div
-					class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg {mode === 'dark'
-						? 'bg-slate-700/50 text-primary'
-						: 'bg-primary/10 text-primary'}"
+					class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary"
 				>
 					<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path
@@ -33,16 +28,10 @@
 						></path>
 					</svg>
 				</div>
-				<h3
-					class="mb-3 font-serif text-2xl font-bold {mode === 'dark'
-						? 'text-white'
-						: 'text-content-p'}"
-				>
+				<h3 class="mb-3 font-serif text-2xl font-bold text-content-p">
 					{service.title}
 				</h3>
-				<p class={mode === 'dark' ? 'text-slate-300' : 'text-content-s'}>
-					{service.description}
-				</p>
+				<p class="text-content-s">{service.description}</p>
 			</div>
 		{/each}
 	</div>

@@ -32,7 +32,7 @@
 		<div class="mx-auto h-1 w-24 bg-primary"></div>
 	</div>
 	<!-- Showing only first 3 services as a teaser -->
-	<Services services={firmData.services.slice(0, 3)} mode="dark" />
+	<Services services={firmData.services.slice(0, 3)} />
 
 	<div class="mt-12 text-center">
 		<a
