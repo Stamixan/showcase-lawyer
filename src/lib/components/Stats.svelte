@@ -7,10 +7,10 @@
 		successRate = '0%',
 		happyClients = '0+',
 		labels = {
-			years: 'Χρόνια Εμπειρίας',
-			cases: 'Επιτυχημένες Υποθέσεις',
-			rate: 'Ποσοστό Επιτυχίας',
-			clients: 'Ικανοποιημένοι Πελάτες'
+			years: '',
+			cases: '',
+			rate: '',
+			clients: ''
 		}
 	} = $props();
 </script>

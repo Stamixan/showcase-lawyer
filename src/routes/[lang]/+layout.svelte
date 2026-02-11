@@ -17,22 +17,25 @@
 </script>
 
 <svelte:head>
-	<title>{firmData.meta.title}</title>
-	<meta name="description" content={firmData.meta.description} />
+	<title>{data.t.meta.site_title}</title>
+	<meta name="description" content={data.t.meta.site_description} />
 
 	<!-- Open Graph -->
-	<meta property="og:title" content={firmData.meta.title} />
-	<meta property="og:description" content={firmData.meta.description} />
+	<meta property="og:title" content={data.t.meta.site_title} />
+	<meta property="og:description" content={data.t.meta.site_description} />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content={page.url.href} />
 	<meta property="og:image" content={new URL(firmData.lawyer.profileImage, page.url.origin).href} />
-	<meta property="og:site_name" content={firmData.lawyer.fullName} />
+	<meta
+		property="og:site_name"
+		content={`${firmData.lawyer.firstName} ${firmData.lawyer.lastName}`}
+	/>
 	<meta property="og:locale" content={data.t.meta.locale} />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content={firmData.meta.title} />
-	<meta name="twitter:description" content={firmData.meta.description} />
+	<meta name="twitter:title" content={data.t.meta.site_title} />
+	<meta name="twitter:description" content={data.t.meta.site_description} />
 	<meta
 		name="twitter:image"
 		content={new URL(firmData.lawyer.profileImage, page.url.origin).href}
@@ -41,7 +44,7 @@
     ${JSON.stringify({
 			'@context': 'https://schema.org',
 			'@type': 'Attorney',
-			name: firmData.lawyer.fullName,
+			name: `${firmData.lawyer.firstName} ${firmData.lawyer.lastName}`,
 			description: firmData.lawyer.shortBio,
 			url: 'https://papadopoulos-law.gr',
 			telephone: firmData.contact.phone,

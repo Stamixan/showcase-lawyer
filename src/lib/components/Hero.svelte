@@ -5,8 +5,8 @@
 		title = '',
 		description = '',
 		ui = {
-			bookAppointment: 'Κλείστε Ραντεβού',
-			learnMore: 'Μάθετε Περισσότερα'
+			book_appointment: 'Κλείστε Ραντεβού',
+			learn_more: 'Μάθετε Περισσότερα'
 		},
 		lang = 'el'
 	} = $props();
@@ -50,13 +50,13 @@
 					href="/{lang}/contact"
 					class="transform rounded-md bg-primary px-8 py-4 text-center font-medium text-white transition-all hover:scale-105 hover:brightness-110"
 				>
-					{ui.bookAppointment}
+					{ui.book_appointment}
 				</a>
 				<a
 					href="/{lang}/about"
 					class="rounded-md border border-white/30 px-8 py-4 text-center font-medium text-white transition-all hover:border-primary hover:bg-white/5"
 				>
-					{ui.learnMore}
+					{ui.learn_more}
 				</a>
 			</div>
 		</div>

@@ -81,38 +81,45 @@
 			</div>
 
 			<div>
-				<h3 class="mb-4 font-semibold text-white">{t.links}</h3>
+				<h3 class="mb-4 font-semibold text-white">{t.footer.links}</h3>
 				<ul class="space-y-2">
-					<li><a href="/{lang}" class="transition-colors hover:text-primary">{t.home}</a></li>
+					<li><a href="/{lang}" class="transition-colors hover:text-primary">{t.nav.home}</a></li>
 					<li>
-						<a href="/{lang}/about" class="transition-colors hover:text-primary">{t.about}</a>
+						<a href="/{lang}/about" class="transition-colors hover:text-primary">{t.nav.about}</a>
 					</li>
 					<li>
-						<a href="/{lang}/services" class="transition-colors hover:text-primary">{t.services}</a>
-					</li>
-					<li>
-						<a href="/{lang}/testimonials" class="transition-colors hover:text-primary"
-							>{t.testimonials}</a
+						<a href="/{lang}/services" class="transition-colors hover:text-primary"
+							>{t.nav.services}</a
 						>
 					</li>
 					<li>
-						<a href="/{lang}/contact" class="transition-colors hover:text-primary">{t.contact}</a>
+						<a href="/{lang}/testimonials" class="transition-colors hover:text-primary"
+							>{t.nav.testimonials}</a
+						>
+					</li>
+					<li>
+						<a href="/{lang}/contact" class="transition-colors hover:text-primary"
+							>{t.nav.contact}</a
+						>
 					</li>
 				</ul>
 			</div>
 
 			<div>
-				<h3 class="mb-4 font-semibold text-white">{t.legal}</h3>
+				<h3 class="mb-4 font-semibold text-white">{t.footer.legal}</h3>
 				<ul class="space-y-2">
 					<li>
-						<a href="/{lang}/privacy" class="transition-colors hover:text-primary">{t.privacy}</a>
+						<a href="/{lang}/privacy" class="transition-colors hover:text-primary"
+							>{t.footer.privacy}</a
+						>
 					</li>
 					<li>
-						<a href="/{lang}/terms" class="transition-colors hover:text-primary">{t.terms}</a>
+						<a href="/{lang}/terms" class="transition-colors hover:text-primary">{t.footer.terms}</a
+						>
 					</li>
 					<li>
 						<a href="/{lang}/disclaimer" class="transition-colors hover:text-primary"
-							>{t.disclaimer}</a
+							>{t.footer.disclaimer}</a
 						>
 					</li>
 				</ul>
@@ -120,14 +127,14 @@
 		</div>
 
 		<div class="mt-12 border-t border-white/10 pt-8 text-center text-sm text-white/80">
-			<p>&copy; {new Date().getFullYear()} {firstName} {lastName}. {t.rights}</p>
+			<p>&copy; {new Date().getFullYear()} {firstName} {lastName}. {t.footer.rights}</p>
 			<p class="mt-2 text-xs text-white/70">
-				{t.created_by}
+				{t.footer.created_by}
 				<a
 					href="https://ianthoulis.gr"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="transition-colors hover:text-primary">{t.developer_name}</a
+					class="transition-colors hover:text-primary">{t.footer.developer_name}</a
 				>
 			</p>
 		</div>

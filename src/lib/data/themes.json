@@ -1,0 +1,32 @@
+{
+    "blue": {
+        "colors": {
+            "primary": "#2563eb",
+            "secondary": "#000000",
+            "accent": "#60a5fa",
+            "text": "#374151",
+            "heading": "#111827",
+            "background": "#f3f4f6"
+        },
+        "fonts": {
+            "heading": "Outfit:wght@400;700",
+            "body": "DM+Sans:wght@400;500"
+        },
+        "borderRadius": "0.75rem"
+    },
+    "gold": {
+        "colors": {
+            "primary": "#b8860b",
+            "secondary": "#0f172a",
+            "accent": "#d97706",
+            "text": "#475569",
+            "heading": "#0f172a",
+            "background": "#ffffff"
+        },
+        "fonts": {
+            "heading": "Cormorant+Garamond:wght@400;500;600;700",
+            "body": "Inter:wght@300;400;500;600"
+        },
+        "borderRadius": "0.5rem"
+    }
+}

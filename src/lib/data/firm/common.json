@@ -1,0 +1,22 @@
+{
+    "stats": {
+        "yearsExperience": "22",
+        "casesWon": "1500+",
+        "successRate": "92%",
+        "happyClients": "1200+"
+    },
+    "contact": {
+        "phone": "+30 210 1234567",
+        "email": "info@papadopoulos-law.gr",
+        "address": {
+            "street": "Λεωφόρος Βασιλίσσης Σοφίας",
+            "postalCode": "101 74",
+            "mapUrl": "https://maps.app.goo.gl/generic-location",
+            "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3144.896758410078!2d23.7438!3d37.9838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDU5JzAxLjciTiAyM8KwNDQnMzcuNyJF!5e0!3m2!1sel!2sgr!4v1620000000000!5m2!1sel!2sgr"
+        },
+        "socials": {
+            "facebook": "https://www.facebook.com",
+            "instagram": "https://www.instagram.com"
+        }
+    }
+}

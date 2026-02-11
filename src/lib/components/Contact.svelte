@@ -22,33 +22,37 @@
 		hours = { weekdays: '', weekend: '' },
 		socials = { facebook: '', instagram: '', linkedin: '' },
 		ui = $bindable({
-			contactSection: 'Επικοινωνία',
-			contactTitle: 'Κλείστε Ραντεβού',
-			contactDesc:
+			form_title: 'Κλείστε Ραντεβού',
+			form_desc:
 				'Κάντε το πρώτο βήμα για την επίλυση των νομικών σας ζητημάτων. Επικοινωνήστε μαζί μας σήμερα για μια εμπιστευτική συνάντηση.',
-			addressLabel: 'Διεύθυνση Γραφείου',
-			phoneLabel: 'Τηλέφωνο',
-			emailLabel: 'Email',
-			hoursLabel: 'Ώρες Λειτουργίας',
-			formName: 'Όνομα',
-			formLastName: 'Επώνυμο',
-			formEmail: 'Email',
-			formPhone: 'Τηλέφωνο',
-			formTopic: 'Τομέας Δικαίου',
-			formMessage: 'Μήνυμα',
-			formMessagePlaceholder: 'Περιγράψτε σύντομα το νομικό σας ζήτημα...',
-			formPrivacy: 'Έχω διαβάσει και συμφωνώ με την',
-			formPrivacyLink: 'Πολιτική Απορρήτου',
-			formPrivacyConsent:
-				'και δίνω τη συγκατάθεσή μου για την επεξεργασία των προσωπικών μου δεδομένων.',
-			formSubmit: 'Αποστολή Μηνύματος',
-			formSubmitting: 'Αποστολή...',
-			formSuccess: 'Το μηνυμά σας εστάλη!',
-			formSuccessDesc: 'Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.',
-			formError: 'Σφάλμα αποστολής',
-			formErrorDesc: 'Υπήρξε ένα πρόβλημα. Παρακαλώ ελέγξτε τη σύνδεσή σας ή προσπαθήστε αργότερα.',
-			selectTopic: 'Επιλέξτε τομέα δικαίου',
-			formPrivacyValidation: 'Παρακαλώ επιλέξτε αυτό το κουτάκι αν θέλετε να προχωρήσετε.'
+			labels: {
+				address: 'Διεύθυνση Γραφείου',
+				phone: 'Τηλέφωνο',
+				email: 'Email',
+				hours: 'Ώρες Λειτουργίας',
+				other: 'Άλλο'
+			},
+			form: {
+				first_name: 'Όνομα',
+				last_name: 'Επώνυμο',
+				email: 'Email',
+				phone: 'Τηλέφωνο',
+				topic: 'Τομέας Δικαίου',
+				message: 'Μήνυμα',
+				message_placeholder: 'Περιγράψτε σύντομα το νομικό σας ζήτημα...',
+				privacy_agree: 'Έχω διαβάσει και συμφωνώ με την',
+				privacy_link: 'Πολιτική Απορρήτου',
+				privacy_consent:
+					'και δίνω τη συγκατάθεσή μου για την επεξεργασία των προσωπικών μου δεδομένων.',
+				submit: 'Αποστολή Μηνύματος',
+				submitting: 'Αποστολή...',
+				success: 'Το μηνυμά σας εστάλη!',
+				success_desc: 'Θα επικοινωνήσουμε μαζί σας το συντομότερο δυνατό.',
+				error: 'Σφάλμα αποστολής',
+				error_desc: 'Υπήρξε ένα πρόβλημα. Παρακαλώ ελέγξτε τη σύνδεσή σας ή προσπαθήστε αργότερα.',
+				select_topic: 'Επιλέξτε τομέα δικαίου',
+				privacy_validation: 'Παρακαλώ επιλέξτε αυτό το κουτάκι αν θέλετε να προχωρήσετε.'
+			}
 		}),
 		topics = [] as string[],
 		lang = 'el'
@@ -59,7 +63,7 @@
 		lastName: '',
 		email: '',
 		phone: '',
-		topic: ui.selectTopic,
+		topic: ui.form.select_topic,
 		message: '',
 		privacyConsent: false,
 		hp_fax: '' // Honeypot
@@ -132,8 +136,8 @@
 				throw new Error(result.error || 'Submission failed');
 			}
 
-			toast.success(ui.formSuccess, {
-				description: ui.formSuccessDesc,
+			toast.success(ui.form.success, {
+				description: ui.form.success_desc,
 				duration: 5000
 			});
 
@@ -142,7 +146,7 @@
 				lastName: '',
 				email: '',
 				phone: '',
-				topic: ui.selectTopic,
+				topic: ui.form.select_topic,
 				message: '',
 				privacyConsent: false,
 				hp_fax: ''
@@ -150,7 +154,7 @@
 		} catch (error: any) {
 			console.error(error);
 			// Display server-side verification error if available
-			let msg = ui.formErrorDesc;
+			let msg = ui.form.error_desc;
 
 			if (error.message?.includes('Text validation failed')) {
 				msg = 'Παρακαλώ ελέγξτε τα στοιχεία σας.';
@@ -161,7 +165,7 @@
 				msg = error.message;
 			}
 
-			toast.error(ui.formError, {
+			toast.error(ui.form.error, {
 				description: msg
 			});
 		} finally {
@@ -195,10 +199,10 @@
 		<div class="grid gap-16 lg:grid-cols-2">
 			<div use:reveal={{ delay: 0 }}>
 				<h2 class="mb-6 font-serif text-4xl font-bold text-heading md:text-5xl">
-					{ui.contactTitle}
+					{ui.form_title}
 				</h2>
 				<p class="mb-8 text-text">
-					{ui.contactDesc}
+					{ui.form_desc}
 				</p>
 				<div class="space-y-6">
 					<div class="flex items-start">
@@ -227,7 +231,7 @@
 						</div>
 						<div class="ml-4 flex-1">
 							<div class="flex items-center justify-between">
-								<h4 class="font-medium text-heading">{ui.addressLabel}</h4>
+								<h4 class="font-medium text-heading">{ui.labels.address}</h4>
 							</div>
 							<div class="flex items-start">
 								<div class="grow">
@@ -331,7 +335,7 @@
 							</svg>
 						</div>
 						<div class="ml-4">
-							<h4 class="font-medium text-heading">{ui.phoneLabel}</h4>
+							<h4 class="font-medium text-heading">{ui.labels.phone}</h4>
 							<p class="text-text">{phone}</p>
 						</div>
 					</div>
@@ -354,7 +358,7 @@
 							</svg>
 						</div>
 						<div class="ml-4">
-							<h4 class="font-medium text-heading">{ui.emailLabel}</h4>
+							<h4 class="font-medium text-heading">{ui.labels.email}</h4>
 							<p class="text-text">{email}</p>
 						</div>
 					</div>
@@ -377,7 +381,7 @@
 							</svg>
 						</div>
 						<div class="ml-4">
-							<h4 class="font-medium text-heading">{ui.hoursLabel}</h4>
+							<h4 class="font-medium text-heading">{ui.labels.hours}</h4>
 							<p class="text-text">{hours.weekdays}<br />{hours.weekend}</p>
 						</div>
 					</div>
@@ -453,7 +457,7 @@
 					<div class="grid gap-6 md:grid-cols-2">
 						<div>
 							<label class="mb-2 block text-sm font-medium text-text" for="firstName"
-								>{ui.formName}</label
+								>{ui.form.first_name}</label
 							>
 							<input
 								type="text"
@@ -470,7 +474,7 @@
 						</div>
 						<div>
 							<label class="mb-2 block text-sm font-medium text-text" for="lastName"
-								>{ui.formLastName}</label
+								>{ui.form.last_name}</label
 							>
 							<input
 								type="text"
@@ -488,7 +492,7 @@
 					</div>
 					<div>
 						<label class="mb-2 block text-sm font-medium text-text" for="email"
-							>{ui.formEmail}</label
+							>{ui.form.email}</label
 						>
 						<input
 							type="email"
@@ -504,7 +508,7 @@
 					</div>
 					<div>
 						<label class="mb-2 block text-sm font-medium text-text" for="phone"
-							>{ui.formPhone}</label
+							>{ui.form.phone}</label
 						>
 						<input
 							type="tel"
@@ -520,14 +524,14 @@
 					</div>
 					<div>
 						<label class="mb-2 block text-sm font-medium text-text" for="topic"
-							>{ui.formTopic}</label
+							>{ui.form.topic}</label
 						>
 						<select
 							id="topic"
 							bind:value={formData.topic}
 							class="w-full rounded-md border border-gray-300 bg-white px-4 py-3 transition outline-none focus:border-transparent focus:ring-2 focus:ring-primary"
 						>
-							<option>{ui.selectTopic}</option>
+							<option>{ui.form.select_topic}</option>
 							{#each topics as topic}
 								<option>{topic}</option>
 							{/each}
@@ -536,7 +540,7 @@
 					</div>
 					<div>
 						<label class="mb-2 block text-sm font-medium text-text" for="message"
-							>{ui.formMessage}</label
+							>{ui.form.message}</label
 						>
 						<textarea
 							bind:this={textareaRef}
@@ -550,14 +554,14 @@
 							placeholder={ui.formMessagePlaceholder}
 						></textarea>
 						<div class="mt-2 flex flex-col gap-1 text-xs text-text/60">
-							<span>{ui.markdownHint}</span>
+							<span>{ui.form.markdown_hint}</span>
 							<a
 								href="https://www.markdownguide.org/cheat-sheet/"
 								target="_blank"
 								rel="noopener noreferrer"
 								class="w-fit text-primary hover:underline"
 							>
-								{ui.markdownGuideLink}
+								{ui.form.markdown_guide}
 							</a>
 						</div>
 						{#if errors.message}
@@ -572,20 +576,20 @@
 							bind:checked={formData.privacyConsent}
 							required
 							oninvalid={(e: Event) =>
-								(e.target as HTMLInputElement).setCustomValidity(ui.formPrivacyValidation)}
+								(e.target as HTMLInputElement).setCustomValidity(ui.form.privacy_validation)}
 							oninput={(e: Event) => (e.target as HTMLInputElement).setCustomValidity('')}
 							class="mt-1 h-4 w-4 rounded border-text/30 text-primary focus:ring-primary"
 						/>
 						<label for="privacy" class="text-sm text-text">
-							{ui.formPrivacy}
+							{ui.form.privacy_agree}
 							<button
 								type="button"
 								onclick={() => (isPrivacyModalOpen = true)}
 								class="inline cursor-pointer border-0 bg-transparent p-0 text-primary hover:underline"
 							>
-								{ui.formPrivacyLink}
+								{ui.form.privacy_link}
 							</button>
-							{ui.formPrivacyConsent}
+							{ui.form.privacy_consent}
 						</label>
 					</div>
 
@@ -628,9 +632,9 @@
 									d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
 								></path>
 							</svg>
-							<span>{ui.formSubmitting}</span>
+							<span>{ui.form.submitting}</span>
 						{:else}
-							{ui.formSubmit}
+							{ui.form.submit}
 						{/if}
 					</button>
 				</form>
@@ -642,7 +646,7 @@
 	<PrivacyModal
 		isOpen={isPrivacyModalOpen}
 		onClose={() => (isPrivacyModalOpen = false)}
-		title={ui.formPrivacyLink}
+		title={ui.form.privacy_link}
 		content={lang === 'el' ? privacyContentEl : privacyContentEn}
 	/>
 </section>

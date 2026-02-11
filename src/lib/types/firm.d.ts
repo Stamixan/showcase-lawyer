@@ -1,8 +1,6 @@
 export interface LawyerConfig {
     firstName: string;
     lastName: string;
-    fullName: string;
-    title: string;
     shortBio: string;
     aboutText: string; // HTML content
     profileImage: string;
@@ -36,12 +34,6 @@ export interface StatsConfig {
     casesWon: string;
     successRate: string;
     happyClients: string;
-    labels: {
-        years: string;
-        cases: string;
-        rate: string;
-        clients: string;
-    };
 }
 
 export interface ServiceConfig {
@@ -58,55 +50,11 @@ export interface TestimonialConfig {
 }
 
 export interface FirmConfig {
-    // slug: string; // Removed for single-tenant
     lawyer: LawyerConfig;
     contact: ContactConfig;
     stats: StatsConfig;
     services: ServiceConfig[];
     testimonials: TestimonialConfig[];
-    ui: {
-        aboutMe: string;
-        aboutTitle: string;
-        excellence: string;
-        memberBar: string;
-        appealCourt: string;
-        fluentEnglish: string;
-        modernApproach: string;
-        bookAppointment: string;
-        learnMore: string;
-        contactSection: string;
-        contactTitle: string;
-        contactDesc: string;
-        addressLabel: string;
-        phoneLabel: string;
-        emailLabel: string;
-        hoursLabel: string;
-        formName: string;
-        formLastName: string;
-        formEmail: string;
-        formPhone: string;
-        formTopic: string;
-        formMessage: string;
-        formMessagePlaceholder: string;
-        formPrivacy: string;
-        formPrivacyLink: string;
-        formPrivacyConsent: string;
-        formSubmit: string;
-        formSubmitting: string;
-        formSuccess: string;
-        formSuccessDesc: string;
-        formError: string;
-        formErrorDesc: string;
-        selectTopic: string;
-        formPrivacyValidation: string;
-        markdownHint: string;
-        markdownGuideLink: string;
-
-    };
-    meta: {
-        title: string;
-        description?: string;
-    };
 }
 
 export interface ThemeConfig {

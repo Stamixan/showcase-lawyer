@@ -1,0 +1,106 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Practice Areas",
+        "testimonials": "Testimonials",
+        "contact": "Contact"
+    },
+    "lawyer": {
+        "title": "Attorney at Law - LL.M. in Intellectual Property"
+    },
+    "hero": {
+        "book_appointment": "Book an Appointment",
+        "learn_more": "Learn More"
+    },
+    "about": {
+        "title": "About Us",
+        "subtitle": "Modern Legal Approach",
+        "expertise_label": "Years of Experience",
+        "member_bar": "Member of Athens Bar Association",
+        "appeal_court": "Attorney at the Court of Appeal",
+        "fluent_english": "Fluent in English",
+        "modern_approach": "Innovation Specialist"
+    },
+    "services": {
+        "title": "Practice Areas",
+        "view_all": "View All Services",
+        "description": "Specialized legal services tailored to your needs."
+    },
+    "testimonials": {
+        "title": "What our clients say",
+        "subtitle": "Testimonials"
+    },
+    "contact": {
+        "title": "Contact Me",
+        "description": "We are here to help. Call us or send a message.",
+        "form_title": "Book an Appointment",
+        "form_desc": "Take the first step towards resolving your legal matters. Contact us today for a confidential meeting.",
+        "labels": {
+            "address": "Office Address",
+            "phone": "Phone",
+            "email": "Email",
+            "hours": "Opening Hours",
+            "copy_address": "Copy address",
+            "address_copied": "Address copied!",
+            "other": "Other"
+        },
+        "form": {
+            "first_name": "First Name",
+            "last_name": "Last Name",
+            "email": "Email",
+            "phone": "Phone",
+            "topic": "Practice Area",
+            "message": "Message",
+            "message_placeholder": "Briefly describe your legal issue...",
+            "privacy_agree": "I have read and agree to the",
+            "privacy_link": "Privacy Policy",
+            "privacy_consent": "and I give my consent for the processing of my personal data.",
+            "submit": "Send Message",
+            "submitting": "Sending...",
+            "success": "Message Sent!",
+            "success_desc": "We will contact you as soon as possible.",
+            "error": "Submission Error",
+            "error_desc": "There was a problem. Please check your connection or try again later.",
+            "select_topic": "Select practice area",
+            "privacy_validation": "Please check this box if you want to proceed.",
+            "markdown_hint": "You can format your text using Markdown. For example: **bold**, *italics*, or - lists.",
+            "markdown_guide": "See Markdown guide"
+        },
+        "maps": {
+            "disabled": "Google Maps is disabled because you declined cookies.",
+            "accept_cta": "Accept Cookies & Show Map"
+        }
+    },
+    "footer": {
+        "links": "Quick Links",
+        "legal": "Legal",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Use",
+        "disclaimer": "Disclaimer",
+        "rights": "All rights reserved.",
+        "created_by": "Created by",
+        "developer_name": "Ioannis Anthoulis",
+        "follow_us": "Follow Us",
+        "tagline": "Providing high-quality legal services with integrity and professionalism."
+    },
+    "cookies": {
+        "text": "We do not use tracking cookies. Cookies may be used by third-party services (Google Maps).",
+        "accept": "Accept",
+        "decline": "Decline"
+    },
+    "stats": {
+        "years": "Years of Experience",
+        "cases": "Successful Cases",
+        "rate": "Success Rate",
+        "clients": "Happy Clients"
+    },
+    "meta": {
+        "locale": "en_US",
+        "site_title": "Georgios Papadopoulos | Attorney - LL.M. Intellectual Property | Athens",
+        "site_description": "Law Office of Georgios Papadopoulos. Specialized in Patent Law and Intellectual Property in Athens."
+    },
+    "common": {
+        "back_to_home": "Back to Home"
+    }
+}

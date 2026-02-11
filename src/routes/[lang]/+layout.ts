@@ -1,4 +1,4 @@
-import { firmData } from '$lib/data/firms';
+import { firmInfo } from '$lib/data/firm';
 import { translations } from '$lib/data/translations';
 import type { LayoutLoad } from './$types';
 import { error } from '@sveltejs/kit';
@@ -7,7 +7,7 @@ export const prerender = true;
 
 export const load: LayoutLoad = ({ params }) => {
     const lang = params.lang as 'el' | 'en';
-    const data = firmData[lang];
+    const data = firmInfo[lang];
     const t = translations[lang];
 
     if (!data || !t) {

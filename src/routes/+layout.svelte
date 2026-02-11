@@ -3,7 +3,7 @@
 	import { Toaster } from 'svelte-sonner';
 	import { onNavigate } from '$app/navigation';
 	import { onMount } from 'svelte';
-	import { themePresets } from '$lib/data/firms';
+	import { themePresets } from '$lib/data/firm';
 
 	let { children, data } = $props();
 
@@ -83,7 +83,7 @@
 				.body}&display=swap"
 			rel="stylesheet"
 			media="print"
-			onload={(e) => (e.currentTarget.media = 'all')}
+			onload={(e) => ((e.currentTarget as HTMLLinkElement).media = 'all')}
 		/>
 	{/if}
 </svelte:head>

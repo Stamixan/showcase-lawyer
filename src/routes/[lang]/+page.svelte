@@ -10,9 +10,9 @@
 <Hero
 	firstName={firmData.lawyer.firstName}
 	lastName={firmData.lawyer.lastName}
-	title={firmData.lawyer.title}
+	title={data.t.lawyer.title}
 	description={firmData.lawyer.shortBio}
-	ui={firmData.ui}
+	ui={data.t.hero}
 	lang={data.lang}
 />
 
@@ -21,7 +21,7 @@
 	casesWon={firmData.stats.casesWon}
 	successRate={firmData.stats.successRate}
 	happyClients={firmData.stats.happyClients}
-	labels={firmData.stats.labels}
+	labels={data.t.stats}
 />
 
 <div class="border-t border-slate-800 bg-slate-900 py-12">

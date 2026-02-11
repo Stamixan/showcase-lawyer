@@ -9,13 +9,13 @@
 		firstName = '',
 		lastName = '',
 		ui = {
-			aboutMe: 'Σχετικά με Εμένα',
-			aboutTitle: 'Σύγχρονη Νομική Προσέγγιση',
-			excellence: 'Χρόνια Εμπειρίας',
-			memberBar: 'Μέλος Δικηγορικού Συλλόγου Αθηνών',
-			appealCourt: "Δικηγόρος παρ' Εφέταις",
-			fluentEnglish: 'Άριστη γνώση Αγγλικών',
-			modernApproach: 'Εξειδίκευση στην Καινοτομία'
+			title: 'Σχετικά με Εμένα',
+			subtitle: 'Σύγχρονη Νομική Προσέγγιση',
+			expertise_label: 'Χρόνια Εμπειρίας',
+			member_bar: 'Μέλος Δικηγορικού Συλλόγου Αθηνών',
+			appeal_court: "Δικηγόρος παρ' Εφέταις",
+			fluent_english: 'Άριστη γνώση Αγγλικών',
+			modern_approach: 'Εξειδίκευση στην Καινοτομία'
 		}
 	} = $props();
 </script>
@@ -37,10 +37,10 @@
 			<div use:reveal={{ delay: 200 }}>
 				<div class="mb-4 flex items-center">
 					<div class="mr-4 h-0.5 w-12 bg-primary"></div>
-					<span class="text-sm font-medium tracking-wider text-accent uppercase">{ui.aboutMe}</span>
+					<span class="text-sm font-medium tracking-wider text-accent uppercase">{ui.title}</span>
 				</div>
 				<h2 class="mb-6 font-serif text-4xl font-bold text-content-p md:text-5xl">
-					{ui.aboutTitle}
+					{ui.subtitle}
 				</h2>
 				<Markdown content={aboutText} html={aboutHtml} />
 				<div class="mt-8 grid grid-cols-2 gap-6">
@@ -56,7 +56,7 @@
 								clip-rule="evenodd"
 							></path>
 						</svg>
-						<span class="font-medium text-slate-700">{ui.memberBar}</span>
+						<span class="font-medium text-slate-700">{ui.member_bar}</span>
 					</div>
 					<div class="flex items-start">
 						<svg
@@ -70,7 +70,7 @@
 								clip-rule="evenodd"
 							></path>
 						</svg>
-						<span class="font-medium text-slate-700">{ui.appealCourt}</span>
+						<span class="font-medium text-slate-700">{ui.appeal_court}</span>
 					</div>
 					<div class="flex items-start">
 						<svg
@@ -84,7 +84,7 @@
 								clip-rule="evenodd"
 							></path>
 						</svg>
-						<span class="font-medium text-slate-700">{ui.fluentEnglish}</span>
+						<span class="font-medium text-slate-700">{ui.fluent_english}</span>
 					</div>
 					<div class="flex items-start">
 						<svg
@@ -98,7 +98,7 @@
 								clip-rule="evenodd"
 							></path>
 						</svg>
-						<span class="font-medium text-slate-700">{ui.modernApproach}</span>
+						<span class="font-medium text-slate-700">{ui.modern_approach}</span>
 					</div>
 				</div>
 			</div>

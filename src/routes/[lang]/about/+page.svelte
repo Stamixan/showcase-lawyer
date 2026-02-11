@@ -21,7 +21,7 @@
 	aboutHtml={firmData.lawyer.aboutText}
 	firstName={firmData.lawyer.firstName}
 	lastName={firmData.lawyer.lastName}
-	ui={firmData.ui}
+	ui={data.t.about}
 />
 
 <Stats
@@ -29,5 +29,5 @@
 	casesWon={firmData.stats.casesWon}
 	successRate={firmData.stats.successRate}
 	happyClients={firmData.stats.happyClients}
-	labels={firmData.stats.labels}
+	labels={data.t.stats}
 />

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import { firmData } from '$lib/data/firms';
+	import { firmInfo } from '$lib/data/firm';
 
 	// Attempt to detect language from URL, default to 'en'
 	let lang = $derived(page.url.pathname.startsWith('/el') ? 'el' : 'en');

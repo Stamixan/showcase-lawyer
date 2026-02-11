@@ -1,0 +1,10 @@
+{
+    "address": {
+        "number": "100",
+        "city": "Athens"
+    },
+    "hours": {
+        "weekdays": "Monday - Friday: 9:00 - 18:00",
+        "weekend": "Saturday: By Appointment"
+    }
+}

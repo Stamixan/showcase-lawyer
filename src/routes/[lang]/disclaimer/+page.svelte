@@ -13,7 +13,12 @@
 	>
 </svelte:head>
 
-<Navbar firstName={firmData.lawyer.firstName} lastName={firmData.lawyer.lastName} {lang} />
+<Navbar
+	firstName={firmData.lawyer.firstName}
+	lastName={firmData.lawyer.lastName}
+	{lang}
+	t={data.t}
+/>
 
 <main class="min-h-screen bg-white py-32">
 	<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
