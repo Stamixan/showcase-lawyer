@@ -37,7 +37,7 @@
 	<div class="mt-12 text-center">
 		<a
 			href="/{data.lang}/services"
-			class="inline-block rounded border border-white/20 px-8 py-3 text-lg font-medium text-white transition-colors hover:bg-white hover:text-slate-900"
+			class="inline-block rounded-md bg-primary px-8 py-3 text-lg font-medium text-white shadow-lg transition-all hover:scale-105 hover:brightness-110"
 		>
 			{data.lang === 'el' ? 'Δείτε όλες τις υπηρεσίες' : 'View All Services'}
 		</a>
