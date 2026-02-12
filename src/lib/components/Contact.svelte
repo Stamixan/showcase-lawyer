@@ -7,6 +7,13 @@
 	import PrivacyModal from './PrivacyModal.svelte';
 	import MarkdownToolbar from '$lib/components/MarkdownToolbar.svelte';
 	import { reveal } from '$lib/actions/reveal';
+	import MapPin from '$lib/components/icons/MapPin.svelte';
+	import Phone from '$lib/components/icons/Phone.svelte';
+	import Mail from '$lib/components/icons/Mail.svelte';
+	import Clock from '$lib/components/icons/Clock.svelte';
+	import Copy from '$lib/components/icons/Copy.svelte';
+	import MapDisabled from '$lib/components/icons/MapDisabled.svelte';
+	import Spinner from '$lib/components/icons/Spinner.svelte';
 
 	let {
 		phone = '',
@@ -209,25 +216,7 @@
 						<div
 							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10"
 						>
-							<svg
-								class="h-6 w-6 text-primary"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-								></path>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-								></path>
-							</svg>
+							<MapPin class="h-6 w-6 text-primary" />
 						</div>
 						<div class="ml-4 flex-1">
 							<div class="flex items-center justify-between">
@@ -259,20 +248,7 @@
 												title={lang === 'el' ? 'Αντιγραφή' : 'Copy address'}
 												aria-label={lang === 'el' ? 'Αντιγραφή διεύθυνσης' : 'Copy address'}
 											>
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke-width="1.5"
-													stroke="currentColor"
-													class="h-5 w-5"
-												>
-													<path
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"
-													/>
-												</svg>
+												<Copy class="h-5 w-5" />
 											</button>
 										</div>
 										<span class="block text-text">{address.postalCode} {address.city}</span>
@@ -292,20 +268,7 @@
 												class="ml-2 inline-flex text-text/40 transition-colors hover:text-primary"
 												title={lang === 'el' ? 'Αντιγραφή' : 'Copy address'}
 											>
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													fill="none"
-													viewBox="0 0 24 24"
-													stroke-width="1.5"
-													stroke="currentColor"
-													class="h-5 w-5"
-												>
-													<path
-														stroke-linecap="round"
-														stroke-linejoin="round"
-														d="M15.666 3.888A2.25 2.25 0 0 0 13.5 2.25h-3c-1.03 0-1.9.693-2.166 1.638m7.332 0c.055.194.084.4.084.612v0a.75.75 0 0 1-.75.75H9a.75.75 0 0 1-.75-.75v0c0-.212.03-.418.084-.612m7.332 0c.646.049 1.288.11 1.927.184 1.1.128 1.907 1.077 1.907 2.185V19.5a2.25 2.25 0 0 1-2.25 2.25H6.75A2.25 2.25 0 0 1 4.5 19.5V6.257c0-1.108.806-2.057 1.907-2.185a48.208 48.208 0 0 1 1.927-.184"
-													/>
-												</svg>
+												<Copy class="h-5 w-5" />
 											</button>
 											<br />
 											{address.postalCode}
@@ -320,19 +283,7 @@
 						<div
 							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10"
 						>
-							<svg
-								class="h-6 w-6 text-primary"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-								></path>
-							</svg>
+							<Phone class="h-6 w-6 text-primary" />
 						</div>
 						<div class="ml-4">
 							<h4 class="font-medium text-heading">{ui.labels.phone}</h4>
@@ -343,19 +294,7 @@
 						<div
 							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10"
 						>
-							<svg
-								class="h-6 w-6 text-primary"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-								></path>
-							</svg>
+							<Mail class="h-6 w-6 text-primary" />
 						</div>
 						<div class="ml-4">
 							<h4 class="font-medium text-heading">{ui.labels.email}</h4>
@@ -366,19 +305,7 @@
 						<div
 							class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10"
 						>
-							<svg
-								class="h-6 w-6 text-primary"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-								></path>
-							</svg>
+							<Clock class="h-6 w-6 text-primary" />
 						</div>
 						<div class="ml-4">
 							<h4 class="font-medium text-heading">{ui.labels.hours}</h4>
@@ -408,31 +335,7 @@
 						<div
 							class="mt-8 flex h-64 w-full flex-col items-center justify-center rounded-lg border border-text/20 bg-background p-6 text-center shadow-lg print:hidden"
 						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-								stroke-width="1.5"
-								stroke="currentColor"
-								class="mb-4 h-12 w-12 text-text/40"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-								/>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-								/>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									d="M3 3l18 18"
-									class="opacity-60"
-								/>
-							</svg>
+							<MapDisabled class="mb-4 h-12 w-12 text-text/40" />
 
 							<p class="mb-4 text-sm text-text sm:text-base">
 								{lang === 'el'
@@ -612,26 +515,7 @@
 						class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-primary py-4 font-medium text-white transition-colors hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
 					>
 						{#if isSubmitting}
-							<svg
-								class="h-5 w-5 animate-spin text-white"
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								viewBox="0 0 24 24"
-							>
-								<circle
-									class="opacity-25"
-									cx="12"
-									cy="12"
-									r="10"
-									stroke="currentColor"
-									stroke-width="4"
-								></circle>
-								<path
-									class="opacity-75"
-									fill="currentColor"
-									d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-								></path>
-							</svg>
+							<Spinner class="h-5 w-5 text-white" />
 							<span>{ui.form.submitting}</span>
 						{:else}
 							{ui.form.submit}
