@@ -82,7 +82,16 @@
         "created_by": "Created by",
         "developer_name": "Ioannis Anthoulis",
         "follow_us": "Follow Us",
-        "tagline": "Providing high-quality legal services with integrity and professionalism."
+        "tagline": "Providing high-quality legal services with integrity and professionalism.",
+        "newsletter": {
+            "title": "Stay Informed",
+            "description": "Get legal updates and news.",
+            "placeholder": "Email address",
+            "button": "Subscribe",
+            "success": "Subscribed!",
+            "error": "Error",
+            "disclaimer": "No spam. Unsubscribe anytime."
+        }
     },
     "cookies": {
         "text": "We do not use tracking cookies. Cookies may be used by third-party services (Google Maps).",

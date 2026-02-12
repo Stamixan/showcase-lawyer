@@ -39,6 +39,12 @@ export default defineSchema({
     count: v.number(),
     lastReset: v.number(),
   }).index("by_identifier", ["identifier"]),
+  newsletter_subscribers: defineTable({
+    email: v.string(),
+    subscribedAt: v.number(),
+    status: v.string(), // "active", "unsubscribed"
+    source: v.optional(v.string()) // e.g. "footer", "popup"
+  }).index("by_email", ["email"]),
   site_settings: defineTable({
     // Store generic settings as a JSON object or specific fields?
     // Specific fields are better for type safety in Convex, but a JSON blob is more flexible.

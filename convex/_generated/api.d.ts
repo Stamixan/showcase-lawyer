@@ -10,6 +10,7 @@
 
 import type * as emails from "../emails.js";
 import type * as inquiries from "../inquiries.js";
+import type * as newsletter from "../newsletter.js";
 import type * as rateLimit from "../rateLimit.js";
 import type * as utils_validation from "../utils/validation.js";
 
@@ -22,6 +23,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   emails: typeof emails;
   inquiries: typeof inquiries;
+  newsletter: typeof newsletter;
   rateLimit: typeof rateLimit;
   "utils/validation": typeof utils_validation;
 }>;

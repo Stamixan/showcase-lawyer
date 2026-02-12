@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { api } from '$convex/_generated/api';
+	import { convex } from '$lib/convex';
+
 	let {
 		firstName = '',
 		lastName = '',
@@ -6,12 +9,37 @@
 		socials = { facebook: '', instagram: '', linkedin: '' },
 		t
 	} = $props();
+
+	let email = $state('');
+	let status = $state<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+	async function subscribe(e: Event) {
+		e.preventDefault();
+		if (!email) return;
+		status = 'loading';
+		try {
+			await convex.mutation(api.newsletter.subscribe, { email, source: 'footer' });
+			status = 'success';
+			email = '';
+			setTimeout(() => {
+				status = 'idle';
+			}, 3000);
+		} catch (err) {
+			console.error(err);
+			status = 'error';
+			setTimeout(() => {
+				status = 'idle';
+			}, 3000);
+		}
+	}
 </script>
 
 <footer class="border-t border-white/5 bg-secondary py-12 text-white/90">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-		<div class="grid gap-8 md:grid-cols-4">
-			<div class="col-span-2">
+		<!-- Changed to grid-cols-2 on mobile (base), then md:4, lg:5 -->
+		<div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
+			<!-- Brand section spans full width (2 cols) on mobile -->
+			<div class="col-span-2 lg:col-span-2">
 				<a href="/{lang}" class="mb-4 block font-serif text-2xl font-bold text-primary">
 					{firstName.charAt(0)}. {lastName}
 				</a>
@@ -123,6 +151,71 @@
 						>
 					</li>
 				</ul>
+			</div>
+
+			<!-- Newsletter Section: Full width on mobile (2 cols), 1 col on desktop -->
+			<div class="col-span-2 lg:col-span-1">
+				<h3 class="mb-4 font-semibold text-white">{t.footer.newsletter.title}</h3>
+				<p class="mb-4 text-sm text-white/70">{t.footer.newsletter.description}</p>
+				<form onsubmit={subscribe} class="flex flex-col gap-2">
+					<div class="relative">
+						<input
+							type="email"
+							bind:value={email}
+							required
+							placeholder={t.footer.newsletter.placeholder}
+							disabled={status === 'loading' || status === 'success'}
+							class="w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-white/40 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none disabled:opacity-50"
+						/>
+						{#if status === 'success'}
+							<div class="absolute inset-y-0 right-0 flex items-center pr-3 text-green-400">
+								<svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+									<path
+										fill-rule="evenodd"
+										d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+										clip-rule="evenodd"
+									/>
+								</svg>
+							</div>
+						{/if}
+					</div>
+					<button
+						type="submit"
+						disabled={status === 'loading' || status === 'success'}
+						class="flex w-full items-center justify-center gap-2 rounded-md bg-white/10 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-50"
+					>
+						{#if status === 'loading'}
+							<svg class="h-4 w-4 animate-spin" viewBox="0 0 24 24">
+								<circle
+									class="opacity-25"
+									cx="12"
+									cy="12"
+									r="10"
+									stroke="currentColor"
+									stroke-width="4"
+								></circle>
+								<path
+									class="opacity-75"
+									fill="currentColor"
+									d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+								></path>
+							</svg>
+						{:else}
+							{t.footer.newsletter.button}
+							<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M14 5l7 7m0 0l-7 7m7-7H3"
+								/>
+							</svg>
+						{/if}
+					</button>
+					<p class="mt-1 text-xs text-white/40">
+						{t.footer.newsletter.disclaimer}
+					</p>
+				</form>
 			</div>
 		</div>
 
