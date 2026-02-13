@@ -69,6 +69,7 @@
 					href={getSwitchLangUrl()}
 					class="ml-4 flex items-center justify-center border border-white/10 transition-colors hover:border-primary hover:bg-white/5"
 					title={lang === 'el' ? 'Switch to English' : 'Αλλαγή σε Ελληνικά'}
+					aria-label={lang === 'el' ? 'Switch to English' : 'Αλλαγή σε Ελληνικά'}
 				>
 					{#if lang === 'el'}
 						<FlagUK class="h-6 w-8 object-cover" />

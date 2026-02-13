@@ -1,6 +1,6 @@
 # Project Context: Law Firm Platform
 
-**Date:** February 5, 2026
+**Date:** February 12, 2026
 **Project:** Law Firm Landing Page Platform
 **Type:** Single-Tenant SvelteKit Application (Georgios Papadopoulos Law)
 
@@ -22,59 +22,57 @@ The project is a high-performance, single-tenant landing page for a specialized 
 ### Architecture
 
 - **Static/Dynamic Routing:** `src/routes/[lang]` handles internationalization (EL/EN).
-- **Centralized Data:** All site content is managed in `src/lib/data/firms.ts`.
-- **Dynamic Components:** All UI components (Hero, Stats, About, Contact) are fully props-driven and localized.
+- **Centralized Data:** All site content is managed in `src/lib/data/firms.ts` and `src/lib/data/firm/`.
+- **Dynamic Components:** All UI components (Hero, Stats, About, Contact, Footer) are fully props-driven and localized.
+- **Icon System:** Centralized Svelte-based icon system in `src/lib/components/icons/` for consistency and theme support.
 
 ### Features Implemented
 
 - **Specialized Lawyer Profile:**
   - Adjusted for a professional with 10 years experience.
   - Focused on Intellectual Property, Patent Law, and Digital Law.
-  - LL.M. specialization highlighted.
 - **Full Internationalization (i18n):**
   - Support for Greek and English.
-  - Dynamic UI labels (buttons, form labels, section titles) moved to data layer.
 - **Enhanced Contact Section:**
   - Dynamic form with localized validation and topics.
-  - Automated deployment to Convex.
+- **Newsletter Subscription:**
+  - Integrated into the Footer with Convex backend storage (`newsletter_subscribers` table).
+  - Features real-time validation, loading states, and success/error feedback.
 - **Admin Dashboard:**
   - Protected route at `/admin`.
   - Inquiry management with AI-powered summarization.
 
-### Completed Improvements (Feb 5, 2025 - Feb 11, 2026)
+### Completed Improvements (Feb 5, 2026 - Feb 12, 2026)
 
-- [x] **Profile Update:** Transitioned from 30+ years generalist to 10-year IP specialist.
-- [x] **i18n Refactor:** Removed all hardcoded Greek/English strings from components.
-- [x] **Dynamic Forms:** Contact form now populates topics from the services list.
-- [x] **Backend:** Fully integrated with Convex and Resend for emotions.
-- [x] **Visual Polish:** Implemented scroll animations, smooth scrolling, and dynamic theme customization.
-- [x] **Dynamic Theming:** Implemented a full Admin GUI (`/admin/settings`) to control colors, fonts, and border radius. Theme data is stored in Convex (`site_settings`) and served server-side for zero layout shift.
-- [x] **Visual Consistency:** Implemented a global border radius system in `layout.css` and standardized all components (Contact, Hero, Testimonials, Services) to use semantic rounding classes (`rounded-lg`, `rounded-md`, `rounded-sm`) derived from a single theme variable.
-- [x] **Contrast Improvements:** Updated Testimonials and Services sections to use "white cards on dark backgrounds" for better readability and visual hierarchy, resolving "blue-on-blue" contrast issues.
-- [x] **Seamless Layouts:** Merged the Services header and content sections into a single container to remove visual boundaries and improve flow.
+- [x] **Newsletter System:** Implemented full-stack subscription flow (Frontend form + Convex mutation/schema).
+- [x] **SVG Refactoring:** Extracted all inline SVGs into dedicated Svelte components in `src/lib/components/icons/` for better maintainability and styling.
+- [x] **Social Media Expansion:** Added generic LinkedIn support to the footer and data layer.
+- [x] **UI Polish:** Replaced generic newsletter icons with an improved Paper Plane design and optimized footer grid layout for mobile/desktop.
 - [x] **Performance Optimization (98% Mobile):**
-    - [x] Implemented "Golden Standard" font loading (Preload + Async CSS) to eliminate CLS and render-blocking penalties.
-    - [x] Optimized LCP via high-priority preloads and breakpoint-matched picture elements.
-    - [x] Reduced Main-thread work by refactoring Markdown hydration and disabling expensive GPU effects (backdrop-blur, hero zoom) on mobile.
-    - [x] Aligned metadata (`theme-color`) and removed redundant network requests (static favicon) for a faster "Time to First Byte" experience.
+    - [x] Implemented "Golden Standard" font loading (Preload + Async CSS).
+    - [x] Optimized LCP via high-priority preloads.
+    - [x] Reduced Main-thread work for mobile.
+- [x] **Dynamic Theming:** Implemented Admin GUI to control colors, fonts, and border radius via Convex.
+- [x] **Visual Consistency:** Standardized border radius and improved card contrast across Services and Testimonials.
 
 ## 3. Suggestions for Improvement (Roadmap)
 
 ### A. Performance (The Last 2%)
 
-- **Image Compression:** Further compress `justice.webp` and `justice-mobile.webp` or use AVIF if supported.
-- **Resource Hints:** Implement `preconnect` for Convex API endpoints to speed up initial data fetch.
+- **Image Compression:** Further compress `justice.webp` and `justice-mobile.webp`.
+- **Resource Hints:** Implement `preconnect` for Convex API endpoints.
 
 ### B. Form Handling & Robustness
 
 - **Superforms Integration:** Replace manual handling with `sveltekit-superforms` for better validation.
 
-### B. Admin Enhancements
+### C. Admin Enhancements
 
 - **Analytics Dashboard:** Add a simple view count or inquiry statistics chart to `/admin`.
-- **Content Editor:** Allow editing `firmData` (text content) via the admin panel alongside the theme.
+- **Newsletter Management:** Add a tab in the Admin panel to view and export newsletter subscribers.
+- **Content Editor:** Allow editing `firmData` via the admin panel.
 
-### C. SEO & Accessibility
+### D. SEO & Accessibility
 
 - **Canonical Tags:** Ensure correct canonical URLs for localized pages.
 - **Sitemap:** Generate a dynamic sitemap for both `/el` and `/en`.

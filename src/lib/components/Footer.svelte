@@ -151,6 +151,7 @@
 							type="email"
 							bind:value={email}
 							required
+							aria-label={t.footer.newsletter.title}
 							placeholder={t.footer.newsletter.placeholder}
 							disabled={status === 'loading' || status === 'success'}
 							class="w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-white/40 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none disabled:opacity-50"
@@ -164,7 +165,7 @@
 					<button
 						type="submit"
 						disabled={status === 'loading' || status === 'success'}
-						class="flex w-full items-center justify-center gap-2 rounded-md bg-white/10 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-white/20 disabled:cursor-not-allowed disabled:opacity-50"
+						class="flex w-full items-center justify-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-medium text-white transition-colors hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-50"
 					>
 						{#if status === 'loading'}
 							<Spinner />
@@ -173,6 +174,13 @@
 							<PaperPlane />
 						{/if}
 					</button>
+					<div class="sr-only" aria-live="polite">
+						{#if status === 'success'}
+							{t.footer.newsletter.success || 'Subscribed successfully'}
+						{:else}
+							{status}
+						{/if}
+					</div>
 					<p class="mt-1 text-xs text-white/40">
 						{t.footer.newsletter.disclaimer}
 					</p>

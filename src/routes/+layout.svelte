@@ -20,13 +20,6 @@
 		if (stored && themePresets[stored]) {
 			theme = themePresets[stored];
 		}
-
-		// Developer hints
-		console.log('🎨 Theme System Loaded');
-		console.log('Available keys:', Object.keys(themePresets));
-		console.log(
-			'To change theme: localStorage.setItem("theme-preset", "gold") && location.reload()'
-		);
 	});
 
 	onNavigate((navigation) => {
