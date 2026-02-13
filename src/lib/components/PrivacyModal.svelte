@@ -7,9 +7,16 @@
 		onClose?: () => void;
 		title?: string;
 		content?: string;
+		t?: any;
 	}
 
-	let { isOpen = false, onClose = () => {}, title = '', content = '' }: Props = $props();
+	let {
+		isOpen = false,
+		onClose = () => {},
+		title = '',
+		content = '',
+		t = { common: { close: 'Close' } }
+	}: Props = $props();
 
 	const handleKeydown: KeyboardEventHandler<Window> = (e) => {
 		if (e.key === 'Escape' && isOpen) {
@@ -71,7 +78,7 @@
 					type="button"
 					class="rounded-lg bg-text/5 px-5 py-2.5 text-sm font-medium text-heading transition-colors hover:bg-text/10"
 				>
-					{title === 'Privacy Policy' ? 'Close' : 'Κλείσιμο'}
+					{t.common.close}
 				</button>
 			</div>
 		</div>

@@ -68,8 +68,8 @@
 				<a
 					href={getSwitchLangUrl()}
 					class="ml-4 flex items-center justify-center border border-white/10 transition-colors hover:border-primary hover:bg-white/5"
-					title={lang === 'el' ? 'Switch to English' : 'Αλλαγή σε Ελληνικά'}
-					aria-label={lang === 'el' ? 'Switch to English' : 'Αλλαγή σε Ελληνικά'}
+					title={t.nav.switch_lang}
+					aria-label={t.nav.switch_lang}
 				>
 					{#if lang === 'el'}
 						<FlagUK class="h-6 w-8 object-cover" />
@@ -104,14 +104,14 @@
 				<a
 					href={getSwitchLangUrl()}
 					class="mt-4 flex items-center border-t border-white/10 pt-4 text-white/60 hover:text-white"
-					aria-label={lang === 'el' ? 'Switch to English' : 'Αλλαγή σε Ελληνικά'}
+					aria-label={t.nav.switch_lang}
 				>
 					{#if lang === 'el'}
 						<FlagUK class="mr-3 h-5 w-5 object-cover" />
-						Switch to English
+						{t.nav.switch_lang}
 					{:else}
 						<FlagGR class="mr-3 h-5 w-5 object-cover" />
-						Αλλαγή σε Ελληνικά
+						{t.nav.switch_lang}
 					{/if}
 				</a>
 			</div>

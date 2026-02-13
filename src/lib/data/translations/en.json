@@ -4,7 +4,8 @@
         "about": "About",
         "services": "Practice Areas",
         "testimonials": "Testimonials",
-        "contact": "Contact"
+        "contact": "Contact",
+        "switch_lang": "Switch to English"
     },
     "lawyer": {
         "title": "Attorney at Law - LL.M. in Intellectual Property"
@@ -65,7 +66,11 @@
             "select_topic": "Select practice area",
             "privacy_validation": "Please check this box if you want to proceed.",
             "markdown_hint": "You can format your text using Markdown. For example: **bold**, *italics*, or - lists.",
-            "markdown_guide": "See Markdown guide"
+            "markdown_guide": "See Markdown guide",
+            "privacy_content": "<p class=\"mb-4\"><strong>Privacy Policy</strong></p><p class=\"mb-2\">Our law firm respects your privacy and is committed to protecting the personal data you provide to us. This policy explains how we collect, use, and protect your information.</p><ul class=\"list-disc pl-5 mb-4 space-y-2\"><li><strong>Data Collection:</strong> We collect only necessary information (name, phone, email) to communicate with you regarding your legal matter.</li><li><strong>Data Use:</strong> Your information is used exclusively to respond to your inquiry and provide legal advice. We do not share it with third parties without your explicit consent, unless required by law.</li><li><strong>Security:</strong> We take all necessary technical measures to ensure the security of your data.</li><li><strong>Rights:</strong> You have the right to access, correct, or delete your information by contacting us.</li></ul><p>By completing the contact form, you consent to the processing of your data in accordance with this policy.</p>",
+            "privacy_full_body": "<p>The protection of your personal data is important to us. This Privacy Policy describes how we collect, use, and protect your information.</p><h2 class=\"font-serif text-2xl font-bold text-slate-900\">1. Information Collection</h2><p>We collect information that you provide to us directly via the contact form, such as your name, email, and phone number, for the purpose of serving your legal requests.</p><h2 class=\"font-serif text-2xl font-bold text-slate-900\">2. Use of Information</h2><p>Your information is used exclusively to communicate with you and provide the legal services you requested. We do not share your data with third parties without your consent.</p><h2 class=\"font-serif text-2xl font-bold text-slate-900\">3. Security</h2><p>We implement appropriate technical and organizational measures for the security of your data against unauthorized access or loss.</p><h2 class=\"font-serif text-2xl font-bold text-slate-900\">4. Your Rights</h2><p>You have the right to access, correct, or delete your personal data that we maintain. Please contact us for any related request.</p>",
+            "terms_full_body": "<p>Welcome to our website. The use of this website is governed by the following terms of use:</p><h2 class=\"font-serif text-2xl font-bold text-slate-900\">1. Acceptance of Terms</h2><p>By accessing this website, you fully accept these terms. If you disagree with any part, please do not use the website.</p><h2 class=\"font-serif text-2xl font-bold text-slate-900\">2. Intellectual Property</h2><p>The content of this website, including text and graphics, is the intellectual property of our firm and is protected by relevant legislation.</p><h2 class=\"font-serif text-2xl font-bold text-slate-900\">3. Limitation of Liability</h2><p>The information provided on this website is for general information only and does not constitute legal advice.</p><h2 class=\"font-serif text-2xl font-bold text-slate-900\">4. Amendments</h2><p>We reserve the right to modify these terms at any time without prior notice.</p>" ,
+            "disclaimer_full_body": "<h2 class=\"font-serif text-2xl font-bold text-slate-900\">No Legal Advice</h2><p>The content of this website is intended solely for informational purposes. It does not constitute legal advice nor does it create an attorney-client relationship.</p><h2 class=\"font-serif text-2xl font-bold text-slate-900\">No Warranty</h2><p>Although we strive to keep the information accurate and up-to-date, we provide no warranty regarding the completeness or accuracy of the content.</p><h2 class=\"font-serif text-2xl font-bold text-slate-900\">External Links</h2><p>This website may contain links to third-party websites. We bear no responsibility for the content or privacy practices of these websites.</p><h2 class=\"font-serif text-2xl font-bold text-slate-900\">Contact</h2><p>For specific legal issues, we recommend that you contact our office directly for specialized legal support.</p>"
         },
         "maps": {
             "disabled": "Google Maps is disabled because you declined cookies.",
@@ -110,6 +115,10 @@
         "site_description": "Law Office of Georgios Papadopoulos. Specialized in Patent Law and Intellectual Property in Athens."
     },
     "common": {
-        "back_to_home": "Back to Home"
+        "back_to_home": "Back to Home",
+        "back": "Back",
+        "close": "Close",
+        "copy": "Copy",
+        "other": "Other"
     }
 }

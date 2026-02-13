@@ -176,7 +176,7 @@
 					</button>
 					<div class="sr-only" aria-live="polite">
 						{#if status === 'success'}
-							{t.footer.newsletter.success || 'Subscribed successfully'}
+							{t.footer.newsletter.success}
 						{:else}
 							{status}
 						{/if}

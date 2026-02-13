@@ -28,6 +28,7 @@
 		},
 		hours = { weekdays: '', weekend: '' },
 		socials = { facebook: '', instagram: '', linkedin: '' },
+		t,
 		ui = $bindable({
 			form_title: 'Κλείστε Ραντεβού',
 			form_desc:
@@ -80,30 +81,6 @@
 	let isSubmitting = $state(false);
 	let isPrivacyModalOpen = $state(false);
 	let textareaRef = $state<HTMLTextAreaElement>();
-
-	const privacyContentEl = `
-		<p class="mb-4"><strong>Πολιτική Προστασίας Προσωπικών Δεδομένων</strong></p>
-		<p class="mb-2">Το δικηγορικό μας γραφείο σέβεται την ιδιωτικότητά σας και δεσμεύεται να προστατεύει τα προσωπικά δεδομένα που μας παρέχετε. Η παρούσα πολιτική εξηγεί πώς συλλέγουμε, χρησιμοποιούμε και προστατεύουμε τα στοιχεία σας.</p>
-		<ul class="list-disc pl-5 mb-4 space-y-2">
-			<li><strong>Συλλογή Δεδομένων:</strong> Συλλέγουμε μόνο τα απαραίτητα στοιχεία (όνομα, τηλέφωνο, email) για την επικοινωνία μαζί σας σχετικά με το νομικό σας ζήτημα.</li>
-			<li><strong>Χρήση Δεδομένων:</strong> Τα στοιχεία σας χρησιμοποιούνται αποκλειστικά για την απάντηση στο αίτημά σας και την παροχή νομικών συμβουλών. Δεν κοινοποιούνται σε τρίτους χωρίς τη ρητή συγκατάθεσή σας, εκτός αν απαιτείται από το νόμο.</li>
-			<li><strong>Ασφάλεια:</strong> Λαμβάνουμε όλα τα απαραίτητα τεχνικά μέτρα για την ασφάλεια των δεδομένων σας.</li>
-			<li><strong>Δικαιώματα:</strong> Έχετε το δικαίωμα πρόσβασης, διόρθωσης ή διαγραφής των στοιχείων σας επικοινωνώντας μαζί μας.</li>
-		</ul>
-		<p>Με τη συμπλήρωση της φόρμας επικοινωνίας, αποδέχεστε την επεξεργασία των στοιχείων σας σύμφωνα με την παρούσα πολιτική.</p>
-	`;
-
-	const privacyContentEn = `
-		<p class="mb-4"><strong>Privacy Policy</strong></p>
-		<p class="mb-2">Our law firm respects your privacy and is committed to protecting the personal data you provide to us. This policy explains how we collect, use, and protect your information.</p>
-		<ul class="list-disc pl-5 mb-4 space-y-2">
-			<li><strong>Data Collection:</strong> We collect only necessary information (name, phone, email) to communicate with you regarding your legal matter.</li>
-			<li><strong>Data Use:</strong> Your information is used exclusively to respond to your inquiry and provide legal advice. We do not share it with third parties without your explicit consent, unless required by law.</li>
-			<li><strong>Security:</strong> We take all necessary technical measures to ensure the security of your data.</li>
-			<li><strong>Rights:</strong> You have the right to access, correct, or delete your information by contacting us.</li>
-		</ul>
-		<p>By completing the contact form, you consent to the processing of your data in accordance with this policy.</p>
-	`;
 
 	async function handleSubmit(e: Event) {
 		e.preventDefault();
@@ -240,13 +217,11 @@
 												onclick={() => {
 													const text = `${address.street} ${address.number}\n${address.postalCode} ${address.city}`;
 													navigator.clipboard.writeText(text);
-													toast.success(
-														lang === 'el' ? 'Η διεύθυνση αντιγράφηκε!' : 'Address copied!'
-													);
+													toast.success(t.contact.labels.address_copied);
 												}}
 												class="text-text/40 opacity-0 transition-all group-hover:opacity-100 hover:text-primary focus:opacity-100"
-												title={lang === 'el' ? 'Αντιγραφή' : 'Copy address'}
-												aria-label={lang === 'el' ? 'Αντιγραφή διεύθυνσης' : 'Copy address'}
+												title={t.contact.labels.copy_address}
+												aria-label={t.contact.labels.copy_address}
 											>
 												<Copy class="h-5 w-5" />
 											</button>
@@ -261,12 +236,10 @@
 												onclick={() => {
 													const text = `${address.street} ${address.number}\n${address.postalCode} ${address.city}`;
 													navigator.clipboard.writeText(text);
-													toast.success(
-														lang === 'el' ? 'Η διεύθυνση αντιγράφηκε!' : 'Address copied!'
-													);
+													toast.success(t.contact.labels.address_copied);
 												}}
 												class="ml-2 inline-flex text-text/40 transition-colors hover:text-primary"
-												title={lang === 'el' ? 'Αντιγραφή' : 'Copy address'}
+												title={t.contact.labels.copy_address}
 											>
 												<Copy class="h-5 w-5" />
 											</button>
@@ -338,15 +311,13 @@
 							<MapDisabled class="mb-4 h-12 w-12 text-text/40" />
 
 							<p class="mb-4 text-sm text-text sm:text-base">
-								{lang === 'el'
-									? 'Ο χάρτης Google έχει απενεργοποιηθεί επειδή δεν αποδεχτήκατε τα cookies.'
-									: 'Google Maps is disabled because you declined cookies.'}
+								{t.contact.maps.disabled}
 							</p>
 							<button
 								onclick={acceptCookiesFromMap}
 								class="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition hover:brightness-110"
 							>
-								{lang === 'el' ? 'Αποδοχή Cookies & Εμφάνιση' : 'Accept Cookies & Show Map'}
+								{t.contact.maps.accept_cta}
 							</button>
 						</div>
 					{/if}
@@ -438,7 +409,7 @@
 							{#each topics as topic}
 								<option>{topic}</option>
 							{/each}
-							<option>{lang === 'el' ? 'Άλλο' : 'Other'}</option>
+							<option>{t.common.other}</option>
 						</select>
 					</div>
 					<div>
@@ -531,6 +502,7 @@
 		isOpen={isPrivacyModalOpen}
 		onClose={() => (isPrivacyModalOpen = false)}
 		title={ui.form.privacy_link}
-		content={lang === 'el' ? privacyContentEl : privacyContentEn}
+		content={t.contact.form.privacy_content}
+		t={t}
 	/>
 </section>

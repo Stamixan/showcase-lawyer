@@ -24,6 +24,7 @@
 	address={firmData.contact.address}
 	hours={firmData.contact.hours}
 	socials={firmData.contact.socials}
+	t={data.t}
 	ui={data.t.contact}
 	topics={firmData.services.map((s) => s.title)}
 	lang={data.lang}
