@@ -181,7 +181,7 @@
 							{status}
 						{/if}
 					</div>
-					<p class="mt-1 text-xs text-white/40">
+					<p class="mt-1 text-xs text-white/60">
 						{t.footer.newsletter.disclaimer}
 					</p>
 				</form>

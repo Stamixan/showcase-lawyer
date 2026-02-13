@@ -79,7 +79,7 @@
 				</a>
 			</div>
 
-			<button onclick={toggleMobileMenu} class="text-white md:hidden" aria-label="Menu">
+			<button onclick={toggleMobileMenu} class="text-white md:hidden" aria-label={t.nav.menu}>
 				<Menu />
 			</button>
 		</div>

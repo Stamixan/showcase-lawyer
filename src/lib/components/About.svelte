@@ -49,6 +49,7 @@
 							class="mt-1 mr-3 h-6 w-6 shrink-0 text-primary"
 							fill="currentColor"
 							viewBox="0 0 20 20"
+							aria-hidden="true"
 						>
 							<path
 								fill-rule="evenodd"
@@ -63,6 +64,7 @@
 							class="mt-1 mr-3 h-6 w-6 shrink-0 text-primary"
 							fill="currentColor"
 							viewBox="0 0 20 20"
+							aria-hidden="true"
 						>
 							<path
 								fill-rule="evenodd"
@@ -77,6 +79,7 @@
 							class="mt-1 mr-3 h-6 w-6 shrink-0 text-primary"
 							fill="currentColor"
 							viewBox="0 0 20 20"
+							aria-hidden="true"
 						>
 							<path
 								fill-rule="evenodd"
@@ -91,6 +94,7 @@
 							class="mt-1 mr-3 h-6 w-6 shrink-0 text-primary"
 							fill="currentColor"
 							viewBox="0 0 20 20"
+							aria-hidden="true"
 						>
 							<path
 								fill-rule="evenodd"

@@ -19,7 +19,7 @@
 				<div
 					class="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-primary/10 text-primary"
 				>
-					<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 						<path
 							stroke-linecap="round"
 							stroke-linejoin="round"
