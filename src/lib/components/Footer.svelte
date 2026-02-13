@@ -141,8 +141,7 @@
 				</ul>
 			</div>
 
-			<!-- Newsletter Section: Temporarily Nuked for Testing -->
-			<!-- 
+			<!-- Newsletter Section: Full width on mobile (2 cols), 1 col on desktop -->
 			<div class="col-span-2 lg:col-span-1">
 				<h3 class="mb-4 font-semibold text-white">{t.footer.newsletter.title}</h3>
 				<p class="mb-4 text-sm text-white/70">{t.footer.newsletter.description}</p>
@@ -187,7 +186,6 @@
 					</p>
 				</form>
 			</div>
-			-->
 		</div>
 
 		<div class="mt-12 border-t border-white/10 pt-8 text-center text-sm text-white/80">
