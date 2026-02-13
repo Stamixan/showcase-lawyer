@@ -104,6 +104,7 @@
 				<a
 					href={getSwitchLangUrl()}
 					class="mt-4 flex items-center border-t border-white/10 pt-4 text-white/60 hover:text-white"
+					aria-label={lang === 'el' ? 'Switch to English' : 'Αλλαγή σε Ελληνικά'}
 				>
 					{#if lang === 'el'}
 						<FlagUK class="mr-3 h-5 w-5 object-cover" />

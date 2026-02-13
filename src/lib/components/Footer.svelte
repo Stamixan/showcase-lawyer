@@ -157,7 +157,7 @@
 							class="w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white placeholder-white/40 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none disabled:opacity-50"
 						/>
 						{#if status === 'success'}
-							<div class="absolute inset-y-0 right-0 flex items-center pr-3 text-green-400">
+							<div class="absolute inset-y-0 right-0 flex items-center pr-3 text-green-500">
 								<Check />
 							</div>
 						{/if}
